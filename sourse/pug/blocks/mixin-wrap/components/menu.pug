@@ -1,43 +1,30 @@
 mixin mnu()
-	-
-		var nav= { 
-			"Наши работы":"#",
-			"Цены":"#",
-			"Калькулятор":"#",
-			"Акции":"#" ,
-			"Заказать":"#",
-			}
-	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		li.menu-item.menu-item-has-children
-			a(href="#" itemprop="url") О нас
-			ul.sub-menu
-				-
-					var subnav= { 
-						"Строительство загородных домов":"#",
-						"Отделка загородных домов":"#",
-						"Покраска деревянных домов":"#",
-						"Штукатурные фасады загородных домов":"#" ,
-						}
-				each sublinkPatch, sublinkName in nav
-					li.menu-item(itemprop="item" ): a(href= sublinkPatch itemprop="url")= sublinkName
-		each linkPatch, linkName in nav
-			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
+	+b.UL.navMenu(itemscope itemtype="http://schema.org/SiteNavigationElement")&attributes(attributes)
+		+e.LI.item( itemprop="item" )
+			+e.chosen-btn.d-md-none(href="#")
+				+icon('star')
+				span Избранное
+		+e.LI.item( itemprop="item" )
+			+e.A.link.has-sub-js(href="#"  itemprop="url") Продажа
+			+subMnu()
+		+e.LI.item( itemprop="item" )
+			+e.A.link.has-sub-js(href="#"  itemprop="url") Аренда
+			+subMnu()
+		+e.LI.item( itemprop="item" ): +e.A.link(href="#"  itemprop="url") Поселки
+		+e.LI.item( itemprop="item" ): +e.A.link(href="#"  itemprop="url") О компании
 
-//- menu
-mixin mnu()
-	-
-		var nav= {
-			"Главная":"#sContact",
-			"Услуги  ":"#",
-			"Подбор септика   ":"#",
-			"Акции ":"#",
-			" О компании  ":"#",
-			" Доставка и оплата ":"#",
-			" Клиентам  ":"#",
-			" Наши работы   ":"#",
-			"Контакты ":"#sContact"
-			}
-	+b.UL.navMenu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		each linkPatch, linkName in nav
-			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
-//- /menu
+mixin subMnu()
+	+b.submenu--js
+		+e.container.container
+			+e.row.row
+				+subMnuItem(1, 'Дома на продажу')
+				+subMnuItem(2, 'Таунхаусы  на продажу')
+				+subMnuItem(3, 'Участки на продажу')
+				+subMnuItem(4, 'Специальные предложения')
+
+mixin subMnuItem(imgNum, txt)
+	+e.col.col-12.col-sm-6.col-md-3
+		+e.item(href="#")
+			+e.img
+				img(loading="lazy" src=`img/@2x/submenu-${imgNum}.jpg` alt="")
+			+e.txt=txt

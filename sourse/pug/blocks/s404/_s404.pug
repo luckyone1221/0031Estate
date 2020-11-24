@@ -1,0 +1,10 @@
+mixin s404(data)
+	// start s404
+	+b.SECTION.s404.section#s404&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				+e.img
+					img(loading="lazy" src="img/svg/img-404.svg" alt="")
+				h1 Запрашиваемая страница не существует
+				+e.btn(href='#') Перейти на главную
+	// end s404

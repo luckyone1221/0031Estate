@@ -1,10 +1,38 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		.container
+		+e.slider
+			.swiper-container.header-slider-js
+				.swiper-wrapper
+					+heaederBlSlide(1)
+					+heaederBlSlide(2)
+					+heaederBlSlide(3)
+					+heaederBlSlide(4)
+					+heaederBlSlide(2)
+			+b.header-puging--js.d-none.d-md-flex
+		+e.container.container
 			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+				h1
+					| Агентство элитной недвижимости
+					br
+					| в Москве
+					|
+					br.d-none.d-sm-block.d-md-none
+					| и Подмосковье
+			+e.selects
+				+customSlect('', undefined, 'Тип недвижимости')
+				+customSlect('', undefined, 'Стоимость')
+				+customSlect('', undefined, 'Направление')
+				+e.search-btn(href='#') Найти
 	// end headerBlock
+
+mixin heaederBlSlide(imgNum)
+	.swiper-slide
+		img.swiper-lazy(src='#' data-src=`img/@2x/header-side-${imgNum}.jpg` alt="")
+
+mixin customSlect(selectName, optionsArr=['Элемент списка1', 'Элемент списка2', 'Элемент списка3'], placeholder='', keyClass='custom-select-js')
+	+b.custom-select
+		select(name=selectName data-placeholder=placeholder class=keyClass)
+			option(value="" label='#')
+			- for (let item of optionsArr)
+				option(value=item)=item

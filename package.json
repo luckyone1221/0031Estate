@@ -57,6 +57,7 @@
   },
   "optionalDependencies": {},
   "dependencies": {
+    "select2": "^4.0.13",
     "@fancyapps/fancybox": "^3.5.7",
     "inputmask": "^5.0.5",
     "jquery": "^3.5.1",

@@ -1,4 +1,3 @@
-
 .pixel-perfect {
 	top: 0;
 	display: block;
@@ -10,7 +9,7 @@
 	height: 100%;
 	background-position: center 0;
 	opacity: 0;
-	// opacity: 0.7;
+	//opacity: 0.7;
 }
 html{
 	
@@ -31,7 +30,11 @@ html {
 }
 
 
-body {  
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
 	min-width: 320px;  
 
 	position: relative; 
@@ -101,6 +104,10 @@ body {
 
 .section-title { 
 	padding-bottom: var(--sTPB);
+
+	& > *:last-child{
+		margin-bottom: 0;
+	}
 }
 
 
@@ -401,4 +408,119 @@ img.img-bg,
 
 iframe {
 	border: none;
+}
+
+a:not(.btn){
+	color: $body-color;
+	&:hover{
+		color: $primary;
+		text-decoration: none;
+	}
+}
+
+//btns
+.btn{
+	padding: 15px 39px;
+	@include media-breakpoint-up(xl){
+		padding: 15px 39px;
+	}
+}
+
+.btn-dark-empty{
+	@extend .btn;
+	@extend .btn-dark;
+
+	border: 1px solid $dark;
+	color: $dark;
+	background-color: transparent;
+	&:hover{
+		border: 1px solid $dark;
+		color: $white!important;
+		background-color: $dark;
+	}
+
+}
+
+.btn-blured-frame{
+	@extend .btn;
+	@extend .btn-white;
+
+	background: rgba(255, 255, 255, 0.07);
+	border: 1px solid rgba(255, 255, 255, 0.35);
+	box-sizing: border-box;
+	backdrop-filter: blur(25px);
+	color: $white;
+
+	&:hover{
+		color: $body-color;
+		text-shadow: 0 0 .8px rgba($body-color, .8);
+		background: $white;
+		border: 1px solid $white;
+	}
+}
+
+//cont
+.container{
+	padding-left: 16px;
+	padding-right: 16px;
+	@include media-breakpoint-up(md){
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	@include media-breakpoint-up(lg){
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+//headlines
+h1, .h1{
+	font-size: 30px;
+	line-height: 0.97;
+	@include media-breakpoint-up(xs){
+		font-size: 44px;
+		line-height: 0.97;
+	}
+	@include media-breakpoint-up(md){
+		font-size: 48px;
+		line-height: (50/48);
+	}
+	@include media-breakpoint-up(xl){
+		font-size: 50px;
+		line-height: (52/50);
+	}
+	@include media-breakpoint-up(xxl){
+		font-size: 62px;
+		line-height: (64/62);
+	}
+}
+
+h2, .h2{
+	font-weight: bold;
+	font-size: 30px;
+	line-height: (32/30);
+	@include media-breakpoint-up(xxl){
+		font-size: 34px;
+		line-height: 1;
+	}
+}
+
+
+//swiper frames
+
+.swiper-pugin-frame{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.swiper-pagination-bullet{
+		@include mt();
+		width: 35px;
+		height: 1px;
+		background: rgba(255, 255, 255, 0.5);
+		border-top: 1px solid transparent;
+		&-active{
+			background-color: $white;
+			border-top: 1px solid $white;
+		}
+	}
 }

@@ -1,4 +1,14 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
-		.container
-			h2 footer
+		+e.container.container
+			+e.logo(href='/')
+				img(loading="lazy" src="img/svg/footer-logo.svg")
+			+e.copy-right © Здесь находится копирайт
+			+e.contacts
+				+e.contact-item(href="#")
+					+icon('viber')
+				+e.contact-item(href="#")
+					+icon('telegram')
+				+e.contact-item(href="#")
+					+icon('whatsup')
+

@@ -1,0 +1,24 @@
+mixin sDigits(data)
+	// start sDigits
+	+b.SECTION.sDigits.section#sDigits&attributes(attributes)
+		+pic('base-bg.jpg')(class="sDigits__bg")
+		.container
+			+b.section-title.text-center
+				h2 В нашей базе:
+				p Продажа элитной недвижимости
+			+e.slider
+				.swiper-container.digits-slider-js
+					.swiper-wrapper
+						+sDigitsSlide('2270', 'домов')
+						+sDigitsSlide('140', 'участников')
+						+sDigitsSlide('550', 'таунхаусов')
+					+b.digits-pugin--js.d-md-none
+			+e.btn-cont
+				+e.btn(href='#') Перейти к подбору
+	// end sDigits
+
+mixin sDigitsSlide(num, txt)
+	.swiper-slide
+		+e.slide-inner
+			+e.num=num
+			+e.txt=txt

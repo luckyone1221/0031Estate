@@ -1,43 +1,106 @@
 .footer {
-		
+	padding: 50px 0 41px 0;
+	@include media-breakpoint-up(md){
+		padding: 41px 0 50px 0;
+	}
+
 	margin-top: auto;
+	background-color: $body-color;
+	color: $white;
+	&__container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
-// 
-@include media-breakpoint-up(xl) {}
+		@include media-breakpoint-up(md){
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+	&__logo{
+		flex-shrink: 0;
+		width: 120px;
+		margin-bottom: 22px;
+		@include media-breakpoint-up(md){
+			width: 150px;
+			margin-bottom: 0;
+		}
 
-@include media-breakpoint-up(lg) {}
+		img{
+			width: 100%;
+			height: auto;
+		}
 
-@include media-breakpoint-up(md) {}
+		order: 2;
+		@include media-breakpoint-up(md){
+			order: 0;
+		}
+	}
+	&__copy-right{
+		text-align: center;
+		color: rgba($white, .5);
+		font-size: 13px;
 
-@include media-breakpoint-up(sm) {}
+		@include media-breakpoint-up(md){
+			padding-top: 8px;
+		}
+		@include media-breakpoint-only(md){
+			margin-left: 16px;
+		}
 
-@include media-breakpoint-up(xs) {}
+		@include media-breakpoint-up(xxl){
+			padding-top: 12px;
+		}
 
+		order: 3;
+		@include media-breakpoint-up(md){
+			order: 0;
+		}
+	}
+	&__contacts{
+		flex-shrink: 0;
+		display: flex;
 
-// 
-@include media-breakpoint-between(md, xl) {}
+		justify-content: center;
+		align-items: stretch;
 
+		order: 1;
+		margin-bottom: 30px;
+		@include media-breakpoint-up(md){
+			margin-bottom: 0;
+			margin-top: 7px;
+			order: 0;
+		}
+	}
+	&__contact-item{
+		width: 45px;
+		height: 45px;
+		margin-right: 15px;
+		&:last-child{
+			margin-right: 0;
+		}
+		border: 1px solid $white;
 
-// 
-@include media-breakpoint-only(xs) {}
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-@include media-breakpoint-only(sm) {}
+		.icon{
+			@include mt();
+			font-size: 19px;
+			color: $white;
+		}
 
-@include media-breakpoint-only(md) {}
-
-@include media-breakpoint-only(lg) {}
-
-@include media-breakpoint-only(xl) {}
-
-
-// 
-@include media-breakpoint-down(xl) {}
-
-@include media-breakpoint-down(lg) {}
-
-@include media-breakpoint-down(md) {}
-
-@include media-breakpoint-down(sm) {}
-
-@include media-breakpoint-down(xs) {}
+		@include mt();
+		background-color: transparent;
+		&:hover{
+			.icon{
+				color: $black;
+			}
+			background-color: $white;
+		}
+	}
+	//
+	&__{}
+	&__{}
 }

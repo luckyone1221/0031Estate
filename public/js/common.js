@@ -224,7 +224,7 @@ var JSCCommon = {
 	},
 	animateScroll: function animateScroll() {
 		// листалка по стр
-		$(" .top-nav li a, .scroll-link").click(function () {
+		$(".scroll-link").click(function () {
 			var elementClick = $(this).attr("href");
 			var destination = $(elementClick).offset().top;
 			$('html, body').animate({
@@ -246,8 +246,8 @@ function eventHandler() {
 
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
+	JSCCommon.tabscostume('tabs'); //JSCCommon.mobileMenu();
+
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
@@ -256,7 +256,7 @@ function eventHandler() {
 
 	var x = window.location.host;
 	var screenName;
-	screenName = 'main.jpg';
+	screenName = '01-375.png';
 
 	if (screenName && x === "localhost:3000") {
 		$(".footer").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -304,6 +304,105 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true
 	})); // modal window
+
+	window.onload = function () {
+		document.body.classList.add('loaded_hiding');
+		window.setTimeout(function () {
+			document.body.classList.add('loaded');
+			document.body.classList.remove('loaded_hiding');
+		}, 500);
+	}; //luckyone js
+	//mob menu
+
+
+	$('.burger-js').click(function () {
+		$(this).toggleClass('active');
+		$('.navMenu').toggleClass('active');
+		document.body.classList.toggle("fixed");
+		document.querySelector('html').classList.toggle("fixed");
+	}); //submenu
+
+	$('.has-sub-js').click(function () {
+		event.preventDefault();
+		closeAllSubMenu(this);
+		$(this).toggleClass('active');
+		$(this.parentElement).find('.submenu--js').slideToggle(function () {
+			$(this).toggleClass('active');
+		});
+	});
+	window.addEventListener('scroll', closeAllSubMenu, {
+		passive: true
+	});
+	window.addEventListener('resize', closeAllSubMenu, {
+		passive: true
+	});
+
+	function closeAllSubMenu(avoidEl) {
+		$('.has-sub-js').each(function () {
+			if (this !== avoidEl) {
+				$(this).removeClass('active');
+				$(this.parentElement).find('.submenu--js').slideUp(function () {
+					$(this).removeClass('active');
+				});
+			}
+		});
+	} //headerBlock
+
+
+	var headerSlider = new Swiper('.header-slider-js', {
+		slidesPerView: 1,
+		//autoplay: 5000,
+		spaceBetween: 0,
+		//
+		lazy: {
+			loadPrevNext: true
+		},
+		pagination: {
+			el: '.header-puging--js',
+			type: 'bullets',
+			clickable: true
+		}
+	});
+	$('.custom-select-js').select2({
+		minimumResultsForSearch: Infinity //dropdownCssClass: "gray-select-2",
+
+	}); //sDigits
+
+	var digitsSlider = new Swiper('.digits-slider-js', {
+		slidesPerView: 'auto',
+		breakpoints: {
+			0: {
+				spaceBetween: 19
+			},
+			1200: {
+				spaceBetween: 30
+			}
+		},
+		//
+		lazy: {
+			loadPrevNext: true
+		},
+		pagination: {
+			el: '.digits-pugin--js',
+			type: 'bullets',
+			clickable: true
+		}
+	}); //sCatalog
+
+	$('.trim-txt-js').each(function () {
+		if (this.innerHTML.length > 60) {
+			var result = this.innerHTML.split('').slice(0, 55).join('');
+			this.innerHTML = result + '...';
+		}
+	}); //todo
+	//1. clean js file
+	//2.
+	//3.
+	//4.
+	//notice
+	// --js sense
+	// animateScroll() remove select
+	//end luckyone js
 }
 
 ;

@@ -1,0 +1,48 @@
+mixin sCatalog(data)
+	// start sCatalog
+	+b.SECTION.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Интересные предложения на продажу
+			+e.row.row
+				+catalogItem(1, 1, 'отличная цена', 'Дом в Успенка-21', '27 км, ID 744', '$ 1 060 000')
+				+catalogItem(2, 0, 0, 'Усадьба в поселке Каком-то на две строки', '27 км, ID 744', '$ 3 800 500')
+				+catalogItem(3, 0, 'отличная цена', 'Особняк с названием', '31 км, ID 1246', '$ 1 055 000', '300 м', '14 соток', '8 спален')
+				+catalogItem(4, 0, 0, 'Усадьба в поселке с очень длинным заголовком и троеточием на конце', '27 км, ID 744', '$ 3 800 500')
+				+catalogItem(5, 1, 'большой бассейн', 'Особняк с названием', '15 км, ID 58', '$ 6 780 000')
+				+catalogItem(1, 0, 0, 'Дом в Успенка-21', '27 км, ID 744', '$ 3 490 000', '290 м', '11 соток', '8 спален')
+			.text-center
+				+e.btn-more(href="#") Больше предложений
+
+
+	// end sCatalog
+
+mixin catalogItem(imgNum, videoLink, imgTag, nameTxt, tagsTxt, price, houseSq='500 м', genSq='17 соток',bads='5 спален')
+	+b.catalog--col.col-12.col-sm-6.col-lg-4
+		+e.item
+			+e.img-cont
+				+e.img-link(href='#')
+					img(loading="lazy" src=`img/@2x/catalog-${imgNum}.jpg`)
+				if videoLink
+					+e.video-link(href="#")
+						img(loading="lazy" src="img/svg/video.svg" alt="")
+				if imgTag
+					+e.img-tag=imgTag
+			+e.txt-cont
+				+e.name-bl
+					+e.name
+						+e.name-txt.trim-txt-js(href="#")=nameTxt
+						+e.txt-tags(href="#")=tagsTxt
+					+e.chosen-btn(href='#')
+						+icon('star')
+				+e.price=price
+				+e.icon-tags
+					+e.i-tag
+						+icon('house')
+						span=houseSq
+					+e.i-tag
+						+icon('tree')
+						span=genSq
+					+e.i-tag
+						+icon('bad')
+						span=bads

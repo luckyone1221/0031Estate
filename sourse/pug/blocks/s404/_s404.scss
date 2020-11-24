@@ -1,0 +1,37 @@
+// start .s404
+.s404 {
+	--sTPB: #{rem(0)};
+	--sPB: #{rem(50)};
+	--sPT: #{rem(51px)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(101px)};
+		--sPB: #{rem(100)};
+	}
+
+	.section-title{
+		max-width: 100%;
+		width: 464px;
+		margin-left: auto;
+		margin-right: auto;
+
+		&__img{
+			margin-bottom: 31.5px;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+		h1{
+			font-weight: 500;
+			font-size: 24px;
+			line-height: (31/24);
+			margin-bottom: 27px;
+		}
+		&__btn{
+			@extend .btn-dark-empty;
+		}
+	}
+	//
+	&__{}
+	&__{}
+} // end.s404

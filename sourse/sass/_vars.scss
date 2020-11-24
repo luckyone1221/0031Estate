@@ -22,6 +22,8 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
+$icon-gray: #6B6663;
+
 
 // fusv-disable
 $grays: ("100": $gray-100,
@@ -35,6 +37,7 @@ $grays: ("100": $gray-100,
   "900": $gray-900) !default;
 // fusv-enable
 
+$brown: #8A4721;
 $blue: #0d6efd !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
@@ -63,20 +66,22 @@ $cyan: #17a2b8 !default;
 //   "gray-dark": $gray-800) !default;
 // // scss-docs-end colors-map
 
-$primary: $blue !default;
+$primary: $brown !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
-$dark: $gray-800 !default;
+$dark: #181717 !default;
 
 // scss-docs-start theme-colors-map
-$theme-colors: ("primary": $primary,
+$theme-colors: (
+  "primary": $primary,
   "secondary": $secondary,
   "success": $success,
   "info": $info,
+  "white": $white,
   "warning": $warning,
   "danger": $danger,
   "light": $light,
@@ -250,7 +255,7 @@ $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) 
 // Settings for the `<body>` element.
 
 $body-bg: $white !default;
-$body-color: $gray-900 !default;
+$body-color: $dark !default;
 $body-text-align: null !default;
 
 
@@ -281,7 +286,9 @@ $paragraph-margin-bottom: 1rem !default;
 // adapting to different screen sizes, for use in media queries.
 
 // scss-docs-start grid-breakpoints
-$grid-breakpoints: (xs: 0,
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 375px,
   sm: 576px,
   md: 768px,
   lg: 992px,
@@ -298,8 +305,9 @@ $grid-breakpoints: (xs: 0,
 // Define the maximum width of `.container` for different screen sizes.
 
 // scss-docs-start container-max-widths
-$container-max-widths: (sm: 540px,
-  md: 720px,
+$container-max-widths: (
+  sm: 540px,
+  md: 768px,
   lg: 960px,
   xl: 1140px,
   xxl: 1320px) !default;
@@ -412,7 +420,7 @@ $line-height-base: 1.5 !default;
 $line-height-sm: 1.25 !default;
 $line-height-lg: 2 !default;
 
-$h1-font-size: $font-size-base * 2.5 !default;
+$h1-font-size: rem(62) !default;
 $h2-font-size: $font-size-base * 2 !default;
 $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;
@@ -420,7 +428,7 @@ $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 
 $headings-margin-bottom: $spacer / 2 !default;
-$headings-font-family: null !default;
+$headings-font-family: $mono !default;
 $headings-font-style: null !default;
 $headings-font-weight: 500 !default;
 $headings-line-height: 1.2 !default;
@@ -529,8 +537,8 @@ $table-variants: ("primary": color-level($primary, $table-bg-level),
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y: .375rem !default;
-$input-btn-padding-x: .75rem !default;
+$input-btn-padding-y: rem(15) !default;
+$input-btn-padding-x: rem(20) !default;
 $input-btn-font-family: null !default;
 $input-btn-font-size: $font-size-base !default;
 $input-btn-line-height: $line-height-base !default;
@@ -587,7 +595,7 @@ $btn-link-disabled-color: $gray-600 !default;
 $btn-block-spacing-y: .5rem !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius: $border-radius !default;
+$btn-border-radius: 0 !default;
 $btn-border-radius-sm: $border-radius-sm !default;
 $btn-border-radius-lg: $border-radius-lg !default;
 

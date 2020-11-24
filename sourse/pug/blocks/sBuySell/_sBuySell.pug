@@ -1,0 +1,22 @@
+mixin sBuySell(data)
+	// start sBuySell
+	+b.SECTION.sBuySell.section#sBuySell&attributes(attributes)
+		.container
+			+e.row.row
+				+e.col.col-md-6
+					+e.item
+						h2
+							| Продаете свою
+							br
+							| недвижимость?
+						p Узнайте, как можно загрузить свой объект недвижимости в наш каталог.
+						+e.btn(href="#") Узнать
+				+e.col.col-md-6
+					+e.item
+						h2
+							| Хотите купить
+							br
+							| недвижимость?
+						p Получите помощь наших профессионалов, которые подберут для Вас лучшие варианты.
+						+e.btn(href="#") Заказать звонок
+	// end sBuySell

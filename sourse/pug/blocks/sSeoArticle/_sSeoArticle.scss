@@ -1,0 +1,93 @@
+// start .sSeoArticle
+.sSeoArticle {
+	--sPT: #{rem(45px)};
+	--sPB: #{rem(47px)};
+	--sTPB: #{rem(21)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(47px)};
+		--sPB: #{rem(60)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(0)};
+		--sPB: #{rem(80)};
+		--sTPB: #{rem(0)};
+	}
+
+	//
+	background-color: rgba($body-color, .05);
+	@include media-breakpoint-up(xl){
+		background-color: $body-bg;
+	}
+
+	&__cont{
+		@include media-breakpoint-up(xl){
+			position: relative;
+			background-color: rgba($body-color, .05);
+			width: 59.8%;
+			margin-left: auto;
+			padding: 76px 70px 81px 180px;
+		}
+	}
+	.section-title{
+		h1{
+			font-weight: 500;
+
+			font-size: 34px;
+			line-height: (38/34);
+			margin-bottom: 16px;
+			@include media-breakpoint-up(xl){
+				margin-bottom: 25px;
+				font-size: 40px;
+				line-height: (43/48);
+			}
+			@include media-breakpoint-up(xxl){
+				font-size: 48px;
+			}
+		}
+		p{
+			font-size: 16px;
+			line-height: (35/16);
+			color: rgba($body-color, .8);
+
+			margin-bottom: 8px;
+			@include media-breakpoint-up(xl){
+				margin-bottom: 9px;
+			}
+		}
+		& > *:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__img-cont{
+
+		@include media-breakpoint-up(md){
+			width: 66%;
+		}
+		@include media-breakpoint-up(xl){
+			position: absolute;
+			width: calc((100% * 2 / 3) + 110px);
+			//height: 368px;
+			top: 50%;
+			right: calc(100% - 110px);
+			transform: translateY(-50%);
+		}
+	}
+	&__img{
+		position: relative;
+		height: 0;
+		display: block;
+		width: 100%;
+		padding-top: 58.4%;
+
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	//
+	&__{}
+} // end.sSeoArticle

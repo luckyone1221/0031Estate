@@ -1,27 +1,25 @@
 mixin mob-mnu()
-	-
-		//- let path = require('path');
-		//- let fs = require('fs');
-		//- var requestURL = 'top-nav.json';
-		//- var request = new XMLHttpRequest();
-		//- request.open('GET', requestURL);
-		//- request.responseType = 'json';
-		//- let dataJson = JSON.parse(json);
-	//- h1= dataJson['lala'] 
-	+b.toggle-menu-mobile--js.d-lg-none
-		span
 	+b.menu-mobile--js.d-lg-none
 		+b.toggle-menu-mobile--js
 			span
 		+e.inner
-		
 			+mnu()
 			.text-right
 	//  мобильное меню
+
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		.container
+		+e.container.container
+			+e.logo(href='#')
+				img(loading="lazy" src='img/svg/logo.svg' alt="")
 			+mnu()
-					
+			+e.chosen-btn.d-none.d-md-flex(href='#')
+				+icon('star')
+				span Избранное
+			+e.num-link.d-none.d-xl-block(href="tel:+73753852312") +7 (375) 385 23 12
+			+e.callback-btn.link-modal(href="#callback-modal")
+				+icon('tel')
+				span Заказать звонок
+			+e.burger.burger-js.d-md-none
 	// end top-nav

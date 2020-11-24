@@ -3,6 +3,10 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
+include ../blocks/sBuySell/_sBuySell.pug
+include ../blocks/sDigits/_sDigits.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sSeoArticle/_sSeoArticle.pug
 
 block variables
 	- let  mainPage= null
@@ -10,15 +14,11 @@ block title
 	- let  title= 'title'
 	title= title
 block pagecontent
-
-	+mob-mnu()
 	+header()
-	+top-nav()
-	+topLine() 
+		+top-nav()
 	+headerBlock()
-	+sForm()
-	+sContact()
+	+sBuySell()
+	+sDigits()
+	+sCatalog()
+	+sSeoArticle()
 	+footer()
-
-
-	

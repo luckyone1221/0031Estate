@@ -1,0 +1,69 @@
+// start .sBuySell
+.sBuySell {
+	background-color: rgba($body-color, .05);
+
+	--sTPB: #{rem(0)};
+
+	--sPT: #{rem(50)};
+	--sPB: #{rem(50)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(60)};
+		--sPB: #{rem(60)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(80)};
+		--sPB: #{rem(80)};
+	}
+
+	&__row{
+		@include roww(20px);
+		@include media-breakpoint-up(xl){
+			@include roww(30px);
+
+			max-width: 1098px;
+			margin-left: auto;
+			margin-right: auto;
+
+		}
+	}
+	&__col{
+		margin-bottom: rem(20);
+		@include media-breakpoint-up(md){
+			margin-bottom: 0;
+		}
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__item{
+		background-color: $white;
+		min-height: 100%;
+
+		padding: 37px 25px 49px;
+		@include media-breakpoint-up(md){
+			padding: 47px 40px 35px;
+		}
+		@include media-breakpoint-up(xl){
+			padding: 47px 60px 35px 60px;
+		}
+
+		h2{
+			margin-bottom: 19px;
+		}
+		p{
+			margin-bottom: 28px;
+			font-size: 16px;
+			line-height: 1.5;
+
+			font-weight: 300;
+			color: rgba($body-color, .85);
+		}
+	}
+	&__btn{
+		@extend .btn-dark-empty;
+	}
+	//
+	&__{}
+	&__{}
+} // end.sBuySell

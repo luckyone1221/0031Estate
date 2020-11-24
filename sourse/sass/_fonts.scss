@@ -1,12 +1,19 @@
-$default-font: "roboto";
+$default-font: "HelveticaNeueCyr";
+$mono: "CormorantGaramond";
 // $file-form: ($file-formats: woff2 woff ttf);
 $addr: '../fonts/';
 $file-format: woff2 woff;
 
-@include font-face ($default-font, $addr + "Roboto-Regular/Roboto-Regular", $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Bold/Roboto-Bold", bold, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Medium/Roboto-Medium", 500, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Black/Roboto-Black", 900, $file-formats: $file-format);
+//def
+@include font-face ($default-font, $addr + "HelveticaNeueCyr-Light/HelveticaNeueCyr-Light", 300, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "HelveticaNeueCyr-Roman/HelveticaNeueCyr-Roman", 400, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "HelveticaNeueCyr-Medium/HelveticaNeueCyr-Medium", 500, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold", 700, $file-formats: $file-format);
+
+//mono
+@include font-face ($mono, $addr + "CormorantGaramond-Regular/CormorantGaramond-Regular", 400, $file-formats: $file-format);
+@include font-face ($mono, $addr + "CormorantGaramond-Medium/CormorantGaramond-Medium", 500, $file-formats: $file-format);
+@include font-face ($mono, $addr + "CormorantGaramond-Bold/CormorantGaramond-Bold", 700, $file-formats: $file-format);
 
 // font-weight helper:
 
