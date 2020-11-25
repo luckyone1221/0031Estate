@@ -48,6 +48,44 @@
 	//
 	&__{}
 	&__{}
+
+	//may-interested
+	&--may-interest{
+		--sPT: 6px;
+		--sPB: 12px;
+		@include media-breakpoint-up(md){
+			--sPT: 17px;
+			--sPB: 36px;
+		}
+		@include media-breakpoint-up(xl){
+			--sPT: 35px;
+			--sPB: 48px;
+		}
+	}
+	//end may-interested
+
+	&--chosen{
+		.breadcrumb-slider-js{
+			margin-bottom: 15px;
+			@include media-breakpoint-down(sm){
+				max-width: calc(100% - 24px);
+				margin-left: auto;
+			}
+		}
+
+		--sPT: 17px;
+		--sPB: 0;
+		@include media-breakpoint-up(md){
+			--sPT: 26px;
+			--sPB: 29px;
+			--sTPB: 27px;
+		}
+		@include media-breakpoint-up(xl){
+			--sPT: 27px;
+			--sPB: 10px;
+			--sTPB: 27px;
+		}
+	}
 } // end.sCatalog
 
 .catalog{

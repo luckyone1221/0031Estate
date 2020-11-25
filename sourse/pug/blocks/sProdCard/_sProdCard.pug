@@ -1,0 +1,62 @@
+mixin sProdCard(data)
+	// start sProdCard
+	+b.SECTION.sProdCard.section#sProdCard&attributes(attributes)
+		.container
+			block
+			+e.top-line
+				+b.section-title
+					h1 Дом в послелке Успенка-21
+					p (27 км, ID 744)
+				+e.chosen-btn
+					span Добавить в избранное
+					+icon('star')
+		+e.slider
+			.swiper-container.prod-card-slider-js
+				.swiper-wrapper
+					+prodCardSlide(1)
+					+prodCardSlide(2)
+					+prodCardSlide(3)
+					+prodCardSlide(4)
+					+prodCardSlide(2)
+				+b.prod-card-pugin--js
+				+b.preve-next-cont.container.d-none.d-md-flex
+					+b.prod-card-prev--js
+						+icon('chveron-left')
+					+b.prod-card-next--js
+						+icon('chveron-right')
+		.container
+			+e.char-line
+				+e.price-bl
+					+e.price--main $ 1 160 060
+					+e.price ₽ 82 000 000
+				+e.char-bl
+					+e.chars-list
+						+charLi('house', '500 м')
+						+charLi('tree', '17 соток')
+						+charLi('bad', '5 спален')
+					+e.show-btn(href="#") Показать расположение на карте
+			+e.description
+				h2 Описание объекта
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eu aliquet pellentesque vulputate cursus sed. Fames netus metus consectetur nulla egestas nibh. Quisque proin semper volutpat arcu turpis mauris sit urna, morbi. Diam justo, diam, pharetra ultrices accumsan. Eget bibendum mattis congue eu massa purus. Ut massa cursus lacinia vulputate
+				+e.read-more.read-more-js
+					p Porta varius aenean sodales facilisis praesent auctor. Amet ultrices phasellus arcu laoreet platea scelerisque iaculis consectetur tortor. Tristique volutpat id adipiscing porta feugiat volutpat faucibus. Pellentesque nam at a convallis laoreet. Tellus tincidunt libero sagittis tincidunt magna nec sed egestas. Tristique amet nisi ornare morbi nisl vel libero. Tristique aliquet eu at erat elit aliquam, adipiscing quam. Varius sagittis, tortor magna dapibus leo, arcu, id tortor vitae. Adipiscing egestas nunc nulla porta id diam erat.
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eu aliquet pellentesque vulputate cursus sed. Fames netus metus consectetur nulla egestas nibh. Quisque proin semper volutpat arcu turpis mauris sit urna, morbi.
+				+e.read-more-btn.read-more-btn-js.d-md-none
+					span Читать дальше
+					img(src="img/svg/chveron-down-2.svg" alt="")
+			+e.baner
+				+e.baner-img
+					img(loading="lazy" src="img/@2x/prod-card-baner.jpg" alt="")
+				+e.baner-link
+					h2 Успенка-21
+					+e.btn-more(href="#") Узнать больше о поселке
+	// end sProdCard
+mixin charLi(icon, val)
+	+e.chars-li
+		+icon(icon)
+		span=val
+
+mixin prodCardSlide(imgNum)
+	.swiper-slide
+		+e.slide-link(href=`img/@2x/prod-img-${imgNum}.jpg` data-fancybox="prodImgs")
+			img.swiper-lazy(src='#' data-src=`img/@2x/prod-img-${imgNum}.jpg`)

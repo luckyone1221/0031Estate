@@ -1,0 +1,25 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sBuySell/_sBuySell.pug
+include ../blocks/sDigits/_sDigits.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sSeoArticle/_sSeoArticle.pug
+include ../blocks/s404/_s404.pug
+include ../blocks/sProdCard/_sProdCard.pug
+include ../blocks/sWant/_sWant.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= '010-chosen'
+	title= title
+block pagecontent
+	+header()
+		+top-nav()
+	+sChosen()
+		+breadcrumb('Главная', 'Избранное')
+	+sWantClosed()
+	+footer()

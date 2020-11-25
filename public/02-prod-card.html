@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>page-404</title>
+		<title>02-prod-card</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
@@ -85,17 +85,247 @@
 			<!-- end top-nav-->
 		</header>
 		<!-- end header-->
-		<!-- start s404-->
-		<section class="s404 section" id="s404">
+		<!-- start sProdCard-->
+		<section class="sProdCard section" id="sProdCard">
 			<div class="container">
-				<div class="section-title text-center">
-					<div class="section-title__img"><img loading="lazy" src="img/svg/img-404.svg" alt=""/>
+				<nav class="breadcrumb-slider-js swiper-container" aria-label="breadcrumb">
+					<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+						<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item">Главная</a></li>
+						<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item">Элитная загородная недвижимость</a></li>
+						<li class="breadcrumb-item swiper-slide active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item">Дома на продажу</a></li>
+					</ol>
+				</nav>
+				<div class="sProdCard__top-line">
+					<div class="section-title">
+						<h1>Дом в послелке Успенка-21</h1>
+						<p>(27 км, ID 744)</p>
 					</div>
-					<h1>Запрашиваемая страница не существует</h1><a class="section-title__btn" href="#">Перейти на главную</a>
+					<div class="sProdCard__chosen-btn"><span>Добавить в избранное</span>
+						<svg class="icon icon-star ">
+							<use xlink:href="img/svg/sprite.svg#star"></use>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="sProdCard__slider">
+				<div class="swiper-container prod-card-slider-js">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><a class="sProdCard__slide-link" href="img/@2x/prod-img-1.jpg" data-fancybox="prodImgs"><img class="swiper-lazy" src="#" data-src="img/@2x/prod-img-1.jpg"/></a>
+						</div>
+						<div class="swiper-slide"><a class="sProdCard__slide-link" href="img/@2x/prod-img-2.jpg" data-fancybox="prodImgs"><img class="swiper-lazy" src="#" data-src="img/@2x/prod-img-2.jpg"/></a>
+						</div>
+						<div class="swiper-slide"><a class="sProdCard__slide-link" href="img/@2x/prod-img-3.jpg" data-fancybox="prodImgs"><img class="swiper-lazy" src="#" data-src="img/@2x/prod-img-3.jpg"/></a>
+						</div>
+						<div class="swiper-slide"><a class="sProdCard__slide-link" href="img/@2x/prod-img-4.jpg" data-fancybox="prodImgs"><img class="swiper-lazy" src="#" data-src="img/@2x/prod-img-4.jpg"/></a>
+						</div>
+						<div class="swiper-slide"><a class="sProdCard__slide-link" href="img/@2x/prod-img-2.jpg" data-fancybox="prodImgs"><img class="swiper-lazy" src="#" data-src="img/@2x/prod-img-2.jpg"/></a>
+						</div>
+					</div>
+					<div class="prod-card-pugin prod-card-pugin--js">
+					</div>
+					<div class="preve-next-cont container d-none d-md-flex">
+						<div class="prod-card-prev prod-card-prev--js">
+							<svg class="icon icon-chveron-left ">
+								<use xlink:href="img/svg/sprite.svg#chveron-left"></use>
+							</svg>
+						</div>
+						<div class="prod-card-next prod-card-next--js">
+							<svg class="icon icon-chveron-right ">
+								<use xlink:href="img/svg/sprite.svg#chveron-right"></use>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="sProdCard__char-line">
+					<div class="sProdCard__price-bl">
+						<div class="sProdCard__price sProdCard__price--main">$ 1 160 060
+						</div>
+						<div class="sProdCard__price">₽ 82 000 000
+						</div>
+					</div>
+					<div class="sProdCard__char-bl">
+						<div class="sProdCard__chars-list">
+							<div class="sProdCard__chars-li">
+								<svg class="icon icon-house ">
+									<use xlink:href="img/svg/sprite.svg#house"></use>
+								</svg><span>500 м</span>
+							</div>
+							<div class="sProdCard__chars-li">
+								<svg class="icon icon-tree ">
+									<use xlink:href="img/svg/sprite.svg#tree"></use>
+								</svg><span>17 соток</span>
+							</div>
+							<div class="sProdCard__chars-li">
+								<svg class="icon icon-bad ">
+									<use xlink:href="img/svg/sprite.svg#bad"></use>
+								</svg><span>5 спален</span>
+							</div>
+						</div><a class="sProdCard__show-btn" href="#">Показать расположение на карте</a>
+					</div>
+				</div>
+				<div class="sProdCard__description">
+					<h2>Описание объекта</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eu aliquet pellentesque vulputate cursus sed. Fames netus metus consectetur nulla egestas nibh. Quisque proin semper volutpat arcu turpis mauris sit urna, morbi. Diam justo, diam, pharetra ultrices accumsan. Eget bibendum mattis congue eu massa purus. Ut massa cursus lacinia vulputate</p>
+					<div class="sProdCard__read-more read-more-js">
+						<p>Porta varius aenean sodales facilisis praesent auctor. Amet ultrices phasellus arcu laoreet platea scelerisque iaculis consectetur tortor. Tristique volutpat id adipiscing porta feugiat volutpat faucibus. Pellentesque nam at a convallis laoreet. Tellus tincidunt libero sagittis tincidunt magna nec sed egestas. Tristique amet nisi ornare morbi nisl vel libero. Tristique aliquet eu at erat elit aliquam, adipiscing quam. Varius sagittis, tortor magna dapibus leo, arcu, id tortor vitae. Adipiscing egestas nunc nulla porta id diam erat.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh eu aliquet pellentesque vulputate cursus sed. Fames netus metus consectetur nulla egestas nibh. Quisque proin semper volutpat arcu turpis mauris sit urna, morbi.</p>
+					</div>
+					<div class="sProdCard__read-more-btn read-more-btn-js d-md-none"><span>Читать дальше</span><img src="img/svg/chveron-down-2.svg" alt=""/>
+					</div>
+				</div>
+				<div class="sProdCard__baner">
+					<div class="sProdCard__baner-img"><img loading="lazy" src="img/@2x/prod-card-baner.jpg" alt=""/>
+					</div>
+					<div class="sProdCard__baner-link">
+						<h2>Успенка-21</h2><a class="sProdCard__btn-more" href="#">Узнать больше о поселке</a>
+					</div>
 				</div>
 			</div>
 		</section>
-		<!-- end s404-->
+		<!-- end sProdCard-->
+		<!-- start sWant-->
+		<section class="sWant section" id="sWant">
+			<div class="container">
+				<div class="form-wrap">
+					<form>
+						<div class="section-title text-center">
+							<h2>Хотите посмотреть этот дом?</h2>
+							<p>Оставьте свои данные и мы свяжемся с вами</p>
+						</div>
+						<div class="form-wrap__form d-none d-md-block">
+							<div class="form-wrap__inputs-bl">
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel"/>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" name="name"/>
+								</div>
+								<!-- +e.input-wrap-->
+							</div>
+							<button class="form-wrap__btn" type="submit">Отправить
+							</button>
+						</div><a class="form-wrap__btn-more link-modal d-md-none" href="#lalala">Подробнее</a>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- end sWant-->
+		<section class="sCatalog sCatalog--may-interest section" id="sCatalog">
+			<div class="container">
+				<div class="section-title text-center">
+					<h2>Возможно вас&#160;заинтересует</h2>
+				</div>
+				<div class="sCatalog__row row">
+					<div class="catalog catalog--col col-12 col-sm-6 col-lg-4">
+						<div class="catalog__item">
+							<div class="catalog__img-cont"><a class="catalog__img-link" href="#"><img loading="lazy" src="img/@2x/catalog-1.jpg"/></a><a class="catalog__video-link" href="#"><img loading="lazy" src="img/svg/video.svg" alt=""/></a>
+								<div class="catalog__img-tag">отличная цена
+								</div>
+							</div>
+							<div class="catalog__txt-cont">
+								<div class="catalog__name-bl">
+									<div class="catalog__name"><a class="catalog__name-txt trim-txt-js" href="#">Дом в Успенка-21</a><a class="catalog__txt-tags" href="#">27 км, ID 744</a>
+									</div><a class="catalog__chosen-btn" href="#">
+									<svg class="icon icon-star ">
+										<use xlink:href="img/svg/sprite.svg#star"></use>
+									</svg></a>
+								</div>
+								<div class="catalog__price">$ 1 060 000
+								</div>
+								<div class="catalog__icon-tags">
+									<div class="catalog__i-tag">
+										<svg class="icon icon-house ">
+											<use xlink:href="img/svg/sprite.svg#house"></use>
+										</svg><span>500 м</span>
+									</div>
+									<div class="catalog__i-tag">
+										<svg class="icon icon-tree ">
+											<use xlink:href="img/svg/sprite.svg#tree"></use>
+										</svg><span>17 соток</span>
+									</div>
+									<div class="catalog__i-tag">
+										<svg class="icon icon-bad ">
+											<use xlink:href="img/svg/sprite.svg#bad"></use>
+										</svg><span>5 спален</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="catalog catalog--col col-12 col-sm-6 col-lg-4">
+						<div class="catalog__item">
+							<div class="catalog__img-cont"><a class="catalog__img-link" href="#"><img loading="lazy" src="img/@2x/catalog-2.jpg"/></a>
+							</div>
+							<div class="catalog__txt-cont">
+								<div class="catalog__name-bl">
+									<div class="catalog__name"><a class="catalog__name-txt trim-txt-js" href="#">Усадьба в поселке Каком-то на две строки</a><a class="catalog__txt-tags" href="#">27 км, ID 744</a>
+									</div><a class="catalog__chosen-btn" href="#">
+									<svg class="icon icon-star ">
+										<use xlink:href="img/svg/sprite.svg#star"></use>
+									</svg></a>
+								</div>
+								<div class="catalog__price">$ 3 800 500
+								</div>
+								<div class="catalog__icon-tags">
+									<div class="catalog__i-tag">
+										<svg class="icon icon-house ">
+											<use xlink:href="img/svg/sprite.svg#house"></use>
+										</svg><span>500 м</span>
+									</div>
+									<div class="catalog__i-tag">
+										<svg class="icon icon-tree ">
+											<use xlink:href="img/svg/sprite.svg#tree"></use>
+										</svg><span>17 соток</span>
+									</div>
+									<div class="catalog__i-tag">
+										<svg class="icon icon-bad ">
+											<use xlink:href="img/svg/sprite.svg#bad"></use>
+										</svg><span>5 спален</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="catalog catalog--col col-12 col-sm-6 col-lg-4 d-sm-none d-lg-block">
+						<div class="catalog__item">
+							<div class="catalog__img-cont"><a class="catalog__img-link" href="#"><img loading="lazy" src="img/@2x/catalog-3.jpg"/></a>
+								<div class="catalog__img-tag">отличная цена
+								</div>
+							</div>
+							<div class="catalog__txt-cont">
+								<div class="catalog__name-bl">
+									<div class="catalog__name"><a class="catalog__name-txt trim-txt-js" href="#">Особняк с названием</a><a class="catalog__txt-tags" href="#">31 км, ID 1246</a>
+									</div><a class="catalog__chosen-btn" href="#">
+									<svg class="icon icon-star ">
+										<use xlink:href="img/svg/sprite.svg#star"></use>
+									</svg></a>
+								</div>
+								<div class="catalog__price">$ 1 055 000
+								</div>
+								<div class="catalog__icon-tags">
+									<div class="catalog__i-tag">
+										<svg class="icon icon-house ">
+											<use xlink:href="img/svg/sprite.svg#house"></use>
+										</svg><span>300 м</span>
+									</div>
+									<div class="catalog__i-tag">
+										<svg class="icon icon-tree ">
+											<use xlink:href="img/svg/sprite.svg#tree"></use>
+										</svg><span>14 соток</span>
+									</div>
+									<div class="catalog__i-tag">
+										<svg class="icon icon-bad ">
+											<use xlink:href="img/svg/sprite.svg#bad"></use>
+										</svg><span>8 спален</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<footer class="footer block-with-lazy">
 			<div class="footer__container container"><a class="footer__logo" href="/"><img loading="lazy" src="img/svg/footer-logo.svg"/></a>
 				<div class="footer__copy-right">© Здесь находится копирайт

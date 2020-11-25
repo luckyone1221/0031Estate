@@ -1,0 +1,42 @@
+mixin sWant(data)
+	// start sWant
+	+b.SECTION.sWant.section#sWant&attributes(attributes)
+		.container
+			+form-wrap
+				+b.section-title.text-center
+					h2 Хотите посмотреть этот дом?
+					p Оставьте свои данные и мы свяжемся с вами
+				+e.form.d-none.d-md-block
+					+e.inputs-bl
+						+input('Ваш телефон', 'tel')
+						+input('Ваше Имя', 'text', false, 'name')
+					+e.btn(type="submit") Отправить
+				+e.btn-more.link-modal.d-md-none(href="#lalala") Подробнее
+	// end sWant
+
+
+mixin sWantClosed(data)
+	// start sWant
+	+b.SECTION.sWant--closed.section#sWant&attributes(attributes)
+		.container
+			+form-wrap
+				+b.section-title.text-center
+					h2 Получите закрытые предложения
+					p Получите предложения о продаже объектов недвижимости, владельцы которых предпочли не выставлять их в публичный каталог
+				+e.form.d-none.d-md-block
+					+e.inputs-bl
+						+input('Ваш телефон', 'tel')
+						+input('Ваше Имя', 'text', false, 'name')
+					+e.btn(type="submit") Получить
+				+e.btn-more.link-modal.d-md-none(href="#lalala") Подробнее
+
+
+mixin sWantThanks(data)
+	// start sWant
+	+b.SECTION.sWant.section#sWant&attributes(attributes)
+		.container
+			+b.form-wrap--thanks
+				+b.section-title.text-center
+					h2 Хотите посмотреть этот дом?
+					p Оставьте свои данные и мы свяжемся с вами
+				+b.btn-thanks(href="#") Посмотреть другие дома

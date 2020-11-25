@@ -244,7 +244,7 @@ function eventHandler() {
 	// добавляет подложку для pixel perfect
 	var x = window.location.host;
 	let screenName;
-	screenName = '01-375.png';
+	screenName = '010-320.png';
 	if (screenName && x === "localhost:3000") {
 		$(".footer").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -346,8 +346,6 @@ function eventHandler() {
 		});
 	}
 
-
-
 	//headerBlock
 	let headerSlider = new Swiper('.header-slider-js', {
 		slidesPerView: 1,
@@ -396,7 +394,39 @@ function eventHandler() {
 			let result = this.innerHTML.split('').slice(0, 55).join('');
 			this.innerHTML = result + '...';
 		}
-	})
+	});
+
+	//breadcrumbs
+	var breadSl = new Swiper('.breadcrumb-slider-js', {
+		slidesPerView: 'auto',
+		// spaceBetween: 30,
+		freeMode: true,
+		freeModeMomentum: true,
+		// spaceBetween: 30,
+		watchOverflow: true,
+	});
+	//sProdCard
+	let prodCardSlider = new Swiper('.prod-card-slider-js', {
+		slidesPerView: 'auto',
+		spaceBetween: 0,
+		//
+		lazy: {
+			loadPrevNext: true,
+		},
+		pagination: {
+			el: '.prod-card-pugin--js',
+			type: 'bullets',
+			clickable: true,
+		},
+	});
+
+	//.read-more-js
+	$('.read-more-btn-js').click(function (){
+		$(this).fadeOut();
+		$(this.parentElement).find('.read-more-js').slideDown(function (){
+			$(this).addClass('active');
+		});
+	});
 
 
 	//todo

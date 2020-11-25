@@ -13,12 +13,31 @@ mixin sCatalog(data)
 				+catalogItem(1, 0, 0, 'Дом в Успенка-21', '27 км, ID 744', '$ 3 490 000', '290 м', '11 соток', '8 спален')
 			.text-center
 				+e.btn-more(href="#") Больше предложений
-
-
 	// end sCatalog
 
+mixin sMayIntrested(data)
+	+b.SECTION.sCatalog--may-interest.section#sCatalog&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Возможно вас&#160;заинтересует
+			+e.row.row
+				+catalogItem(1, 1, 'отличная цена', 'Дом в Успенка-21', '27 км, ID 744', '$ 1 060 000')
+				+catalogItem(2, 0, 0, 'Усадьба в поселке Каком-то на две строки', '27 км, ID 744', '$ 3 800 500')
+				+catalogItem(3, 0, 'отличная цена', 'Особняк с названием', '31 км, ID 1246', '$ 1 055 000', '300 м', '14 соток', '8 спален')(class="d-sm-none d-lg-block")
+
+mixin sChosen(data)
+	+b.SECTION.sCatalog--chosen.section#sCatalog&attributes(attributes)
+		.container
+			block
+			+b.section-title.text-center
+				h2 Избранное
+			+e.row.row
+				+catalogItem(1, 1, 'отличная цена', 'Дом в Успенка-21', '27 км, ID 744', '$ 1 060 000')
+				+catalogItem(2, 0, 0, 'Усадьба в поселке Каком-то на две строки', '27 км, ID 744', '$ 3 800 500')
+				+catalogItem(3, 0, 'отличная цена', 'Особняк с названием', '31 км, ID 1246', '$ 1 055 000', '300 м', '14 соток', '8 спален')
+
 mixin catalogItem(imgNum, videoLink, imgTag, nameTxt, tagsTxt, price, houseSq='500 м', genSq='17 соток',bads='5 спален')
-	+b.catalog--col.col-12.col-sm-6.col-lg-4
+	+b.catalog--col.col-12.col-sm-6.col-lg-4&attributes(attributes)
 		+e.item
 			+e.img-cont
 				+e.img-link(href='#')

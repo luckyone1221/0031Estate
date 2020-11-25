@@ -447,7 +447,6 @@ a:not(.btn){
 
 	background: rgba(255, 255, 255, 0.07);
 	border: 1px solid rgba(255, 255, 255, 0.35);
-	box-sizing: border-box;
 	backdrop-filter: blur(25px);
 	color: $white;
 
@@ -509,6 +508,8 @@ h2, .h2{
 //swiper frames
 
 .swiper-pugin-frame{
+	--puginColor: #{$white};
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -516,11 +517,97 @@ h2, .h2{
 		@include mt();
 		width: 35px;
 		height: 1px;
-		background: rgba(255, 255, 255, 0.5);
+		background: var(--puginColor);
 		border-top: 1px solid transparent;
+		opacity: .35;
+		@include media-breakpoint-up(md){
+			opacity: .7;
+		}
+
 		&-active{
-			background-color: $white;
-			border-top: 1px solid $white;
+			opacity: 1;
+			border-top: 1px solid var(--puginColor);
 		}
 	}
 }
+
+.swiper-prev-next-frame{
+	cursor: pointer;
+	box-shadow: none!important;
+	border: none!important;
+	outline: none!important;
+
+	width: 50px;
+	height: 50px;
+	background-color: rgba(0,0,0, .3);
+	backdrop-filter: blur(35px);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include mt();
+	.icon{
+		@include mt();
+		font-size: 15px;
+		color: rgba($white, .7);
+	}
+
+	&:hover{
+		background-color: rgba(0,0,0, .45);
+		.icon{
+			color: $white;
+		}
+	}
+}
+
+//breadcrumb
+ .breadcrumb-slider-js{
+	 //margin-bottom: rem(34);
+	 overflow: visible;
+	 //wraper
+	 .breadcrumb{
+		 list-style: none;
+		 flex-wrap: nowrap;
+		 background-color: transparent;
+		 padding: 0;
+		 overflow: visible;
+	 }
+
+	 //swiper slide
+	 .breadcrumb-item{
+		 width: auto;
+
+		 font-size: 14px;
+		 line-height: 1.71;
+		 display: flex;
+		 align-items: center;
+
+		 a{
+			 color: $icon-gray!important;
+			 &:hover{
+				 color: $primary!important;
+			 }
+		 }
+
+		 &:last-child{
+			 & > *{
+				 color: $body-color!important;
+			 }
+		 }
+
+		 & + .breadcrumb-item{
+			 padding: 0;
+			 &:before{
+				 content: '';
+				 display: inline-block;
+				 margin: 0 15px;
+				 width: 3px;
+				 height: 3px;
+				 border-radius: 50%;
+				 background-color: $body-color;
+			 }
+		 }
+	 }
+
+ }
