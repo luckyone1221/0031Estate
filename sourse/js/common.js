@@ -244,7 +244,7 @@ function eventHandler() {
 	// добавляет подложку для pixel perfect
 	var x = window.location.host;
 	let screenName;
-	screenName = '08-320.png';
+	screenName = '03-768.png';
 	if (screenName && x === "localhost:3000") {
 		$(".footer").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -499,6 +499,16 @@ function eventHandler() {
 		$(this.parentElement).find('.read-more-js').slideDown(function (){
 			$(this).addClass('active');
 		});
+	});
+
+	//.filters-bl--js
+	$('.open-filter-js').click(function (){
+		event.preventDefault();
+		$(this).find('span').toggleClass('active');
+		$('.filters-bl--js').slideToggle(function (){
+			$(this).toggleClass('active');
+		});
+
 	});
 
 

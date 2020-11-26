@@ -256,7 +256,7 @@ function eventHandler() {
 
 	var x = window.location.host;
 	var screenName;
-	screenName = '08-320.png';
+	screenName = '03-768.png';
 
 	if (screenName && x === "localhost:3000") {
 		$(".footer").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
@@ -494,6 +494,14 @@ function eventHandler() {
 		$(this).fadeOut();
 		$(this.parentElement).find('.read-more-js').slideDown(function () {
 			$(this).addClass('active');
+		});
+	}); //.filters-bl--js
+
+	$('.open-filter-js').click(function () {
+		event.preventDefault();
+		$(this).find('span').toggleClass('active');
+		$('.filters-bl--js').slideToggle(function () {
+			$(this).toggleClass('active');
 		});
 	}); //todo
 	//1. clean js file

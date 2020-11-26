@@ -41,7 +41,7 @@ mixin catalogItem(imgNum, videoLink, imgTag, nameTxt, tagsTxt, price, houseSq='5
 		+e.item
 			+e.img-cont
 				+e.img-link(href='#')
-					img(loading="lazy" src=`img/@2x/catalog-${imgNum}.jpg`)
+					img(loading="lazy" src=`img/@2x/catalog-${imgNum}.jpg` alt="")
 				if videoLink
 					+e.video-link(href="#")
 						img(loading="lazy" src="img/svg/video.svg" alt="")

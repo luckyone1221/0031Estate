@@ -1,0 +1,135 @@
+mixin sHouses(data)
+	// start sHouses
+	+b.SECTION.sHouses.section#sHouses&attributes(attributes)
+		.container
+			block
+			+b.section-title
+				h2 Элитные загородные дома в Подмосковье
+			+e.filter-row
+				+e.filter-col
+					+e.open-btn.open-filter-js(href="#")
+						//act in js
+						span.active Открыть фильтр
+						span Закрыть фильтр
+					+e.chosen-filter
+						+e.ch-filters
+							+cfFilter('Норовижское ш.')
+							+cfFilter('Дома')
+							+cfFilter('Под ключ')
+						+e.save-pref(href="#")
+							+icon('star')
+							span Сохранить настройки поиска
+				+e.sort-col
+					+e.sort-links
+						a.active(href='#') ₽
+						a(href='#') $
+					+customSlectWhiteNoPH('selectName', undefined, 'custom-white-select-js')
+			+b.filters-bl--js
+				+e.container.container
+					+chbGroup('Направление:', [
+						{
+							name: 'direction1',
+							txt: 'Норовижское ш.',
+							checked: true,
+						},
+						{
+							name: 'direction2',
+							txt: 'Минское ш.',
+						},
+						{
+							name: 'direction3',
+							txt: 'Киевское ш.',
+						},
+						{
+							name: 'direction4',
+							txt: 'Рублево-Усспенское ш.',
+						},
+						])
+					+chbGroup('Тип объекта:', [
+						{
+							name: 'type1',
+							txt: 'Дом',
+							checked: true,
+						},
+						{
+							name: 'type2',
+							txt: 'Таунхаус',
+						},
+						{
+							name: 'type3',
+							txt: 'Участок',
+						},
+					])
+					+chbGroup('Отделка:', [
+						{
+							name: 'complitness1',
+							txt: 'Под ключ',
+							checked: true,
+						},
+						{
+							name: 'complitness2',
+							txt: 'Черновая',
+						},
+						{
+							name: 'complitness3',
+							txt: 'Частично под ключ',
+						},
+					])
+					+chbGroup('Что-то еще:', [
+						{
+							name: 'else1',
+							txt: 'Текст',
+							checked: true,
+						},
+						{
+							name: 'else2',
+							txt: 'Вариант',
+						},
+						{
+							name: 'else3',
+							txt: 'Выбор',
+						},
+					])
+					+e.line--inputs
+						+e.l-title Цена:
+						+e.content
+							+e.inputs
+								+input('', 'text', 'От', 'price-from')
+								+input('', 'text', 'До', 'price-to')
+					+e.foot
+						+e.show-btn(href='#') Показать 1289 объектов
+						+e.discard-btn(href="#")
+							span Сбросить все
+							+icon('cross')
+			+e.row.row
+				+catalogItem(1, 1, 'отличная цена', 'Дом в Успенка-21', '27 км, ID 744', '$ 1 060 000')
+				+catalogItem(2, 0, 0, 'Усадьба в поселке Каком-то на две строки', '27 км, ID 744', '$ 3 800 500')
+				+catalogItem(3, 0, 'отличная цена', 'Особняк с названием', '31 км, ID 1246', '$ 1 055 000', '300 м', '14 соток', '8 спален')
+				+catalogItem(4, 0, 0, 'Усадьба в поселке с очень длинным заголовком и троеточием на конце', '27 км, ID 744', '$ 3 800 500')
+				+catalogItem(5, 1, 'большой бассейн', 'Особняк с названием', '15 км, ID 58', '$ 6 780 000')
+				+catalogItem(1, 0, 0, 'Дом в Успенка-21', '27 км, ID 744', '$ 3 490 000', '290 м', '11 соток', '8 спален')
+				+catalogItem(4, 0, 0, 'Усадьба в поселке с очень длинным заголовком и троеточием на конце', '27 км, ID 744', '$ 3 800 500')
+				+catalogItem(5, 1, 'большой бассейн', 'Особняк с названием', '15 км, ID 58', '$ 6 780 000')
+				+catalogItem(1, 0, 0, 'Дом в Успенка-21', '27 км, ID 744', '$ 3 490 000', '290 м', '11 соток', '8 спален')
+				+catalogItem(1, 0, 0, 'Дом в Успенка-21', '27 км, ID 744', '$ 3 490 000', '290 м', '11 соток', '8 спален')(class="d-lg-none")
+			+pugin()
+	// end sHouses
+
+mixin cfFilter(name)
+	+e.ch-filter
+		+icon('cross')
+		span=name
+
+mixin chbGroup(titleTxt, chbItems)
+	+e.line
+		+e.l-title=titleTxt
+		+e.content
+			+e.chb-items
+				each chbItem in chbItems
+					+b.LABEL.checkbox-item
+						if chbItem.checked
+							input(type='checkbox' name=chbItem.name id=chbItem.name checked)
+						else
+							input(type='checkbox' name=chbItem.name id=chbItem.name)
+						span.chb-square
+						span.txt=chbItem.txt

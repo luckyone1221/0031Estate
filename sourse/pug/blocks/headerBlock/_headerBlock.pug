@@ -20,9 +20,9 @@ mixin headerBlock()
 					br.d-none.d-sm-block.d-md-none
 					| и Подмосковье
 			+e.selects
-				+customSlect('', undefined, 'Тип недвижимости')
-				+customSlect('', undefined, 'Стоимость')
-				+customSlect('', undefined, 'Направление')
+				+customSlect('TypeSel', undefined, 'Тип недвижимости')
+				+customSlect('ValSel', undefined, 'Стоимость')
+				+customSlect('DirectionSel', undefined, 'Направление')
 				+e.search-btn(href='#') Найти
 	// end headerBlock
 
@@ -41,5 +41,11 @@ mixin customSlectWhite(selectName, optionsArr=['Элемент списка1', '
 	+b.custom-select--white
 		select(name=selectName data-placeholder=placeholder class=keyClass)
 			option(value="" label='#')
+			- for (let item of optionsArr)
+				option(value=item)=item
+
+mixin customSlectWhiteNoPH(selectName, optionsArr=['Элемент списка1', 'Элемент списка2', 'Элемент списка3'], keyClass='custom-select-js')
+	+b.custom-select--white
+		select(name=selectName class=keyClass)
 			- for (let item of optionsArr)
 				option(value=item)=item

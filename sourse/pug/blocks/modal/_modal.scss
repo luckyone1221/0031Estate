@@ -1,12 +1,5 @@
 .modal-win {
-	// display: block;
-	width: 100%;
 	position: relative;
-
-	.modal-content {
-		// max-width: 485px;
-		// padding-right: 40px 15px;
-	}
 
 	.mfp-close {
 		color: $primary;
@@ -23,11 +16,11 @@ a {
 	position: relative;
 }
 
-#foot-dialog {
-	h3 {
-		font-size: em(36);
-	}
-}
+//#foot-dialog {
+//	h3 {
+//		font-size: em(36);
+//	}
+//}
 
 .mfp-close {
 	user-select: none; // width: 44px;
@@ -71,57 +64,90 @@ a {
 	}
 }
 
-@include media-breakpoint-up(sm) {
-	.modal-text {
-		max-width: 1000px;
+//.polite {
+//	.link {
+//		color: $primary;
+//		cursor: pointer;
+//		text-decoration: underline;
+//
+//		:hover {
+//			display: none;
+//		}
+//	}
+//}
+
+.fancybox-slide{
+	@include media-breakpoint-down(md){
+		padding: 0!important;
 	}
 }
-
-.polite {
-	.link {
-		color: $primary;
-		cursor: pointer;
-		text-decoration: underline;
-
-		:hover {
-			display: none;
+.modal-win{
+	padding: 56px 16px 30px!important;
+	width: 100vw;
+	height: 100vh;
+	@include media-breakpoint-up(md){
+		width: auto;
+		height: auto;
+		padding: 65px 100px 80px!important;
+	}
+	@include media-breakpoint-up(xl){
+		padding: 65px 165px 80px!important;
+	}
+	.form-wrap{
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@include media-breakpoint-up(md){
+			display: block;
 		}
+
+		text-align: center;
+		&__title{
+
+			margin-bottom: 16px;
+		}
+		.after-headline{
+			font-weight: 300;
+			color: rgba($body-color, .85);
+
+
+			margin-bottom: 27px;
+		}
+		&__inputs{
+			width: 288px;
+			@include media-breakpoint-up(xs){
+				width: 300px;
+			}
+			@include media-breakpoint-up(md){
+				display: flex;
+				align-items: stretch;
+				justify-content: space-between;
+				width: 520px;
+				max-width: 100%;
+			}
+			margin-bottom: 35px;
+
+		}
+		&__input-wrap{
+			margin-bottom: 10px;
+			@include media-breakpoint-up(md){
+				margin-bottom: 0;
+				width: calc(50% - 10px);
+			}
+		}
+		&__input{
+			width: 100%;
+		}
+		&__btn{
+			@extend .btn;
+			@extend .btn-dark;
+		}
+
+		&__look-others{
+			@extend .btn-dark-empty;
+		}
+		&__{}
 	}
 }
-
-
-// 
-@include media-breakpoint-up(xl) {}
-
-@include media-breakpoint-up(lg) {}
-
-@include media-breakpoint-up(md) {}
-
-@include media-breakpoint-up(sm) {}
-
-@include media-breakpoint-up(xs) {}
-
-// 
-@include media-breakpoint-between(md, xl) {}
-
-// 
-@include media-breakpoint-only(xs) {}
-
-@include media-breakpoint-only(sm) {}
-
-@include media-breakpoint-only(md) {}
-
-@include media-breakpoint-only(lg) {}
-
-@include media-breakpoint-only(xl) {}
-
-// 
-@include media-breakpoint-down(xl) {}
-
-@include media-breakpoint-down(lg) {}
-
-@include media-breakpoint-down(md) {}
-
-@include media-breakpoint-down(sm) {}
-
-@include media-breakpoint-down(xs) {}

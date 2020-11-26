@@ -328,9 +328,10 @@
 	}
 
 
+	border-top: 1px solid rgba($body-color, .1);
 	padding: 30px 0 5px 0;
 	@include media-breakpoint-up(md){
-		top: 82px;
+		top: 81px;
 		position: absolute;
 		left: 0;
 		width: 100%;
