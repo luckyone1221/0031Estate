@@ -244,7 +244,7 @@ function eventHandler() {
 	// добавляет подложку для pixel perfect
 	var x = window.location.host;
 	let screenName;
-	screenName = '010-320.png';
+	screenName = '08-320.png';
 	if (screenName && x === "localhost:3000") {
 		$(".footer").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
@@ -333,7 +333,7 @@ function eventHandler() {
 		});
 	});
 
-	window.addEventListener('scroll', closeAllSubMenu, {passive: true});
+	//window.addEventListener('scroll', closeAllSubMenu, {passive: true});
 	window.addEventListener('resize', closeAllSubMenu, {passive: true});
 	function closeAllSubMenu(avoidEl){
 		$('.has-sub-js').each(function (){
@@ -362,10 +362,83 @@ function eventHandler() {
 		},
 	});
 
+	//selects
 	$('.custom-select-js').select2({
 		minimumResultsForSearch: Infinity,
-		//dropdownCssClass: "gray-select-2",
 	});
+	$('.custom-white-select-js').select2({
+		minimumResultsForSearch: Infinity,
+		dropdownCssClass: "white-select",
+	});
+	// rangle sliders
+	function currencyFormat(num) {
+		return num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+	}
+
+	$(".range-wrap").each(function () {
+		let _this = $(this);
+		var $range= _this.find(".slider-js");
+		var $inputFrom = _this.find(".input_from");
+		var $inputTo = _this.find(".input_to");
+		var instance, from, to,
+			min = $range.data('min'),
+			max = $range.data('max');
+		$range.ionRangeSlider({
+			skin: "round",
+			type: "double",
+			grid: false,
+			grid_snap: false,
+			hide_min_max: true,
+			hide_from_to: true,
+			onStart: updateInputs,
+			onChange: updateInputs,
+			onFinish: updateInputs
+		});
+		instance = $range.data("ionRangeSlider");
+
+		function updateInputs(data) {
+			from = data.from;
+			to = data.to;
+
+			$inputFrom.prop("value", currencyFormat(from));
+			$inputTo.prop("value", currencyFormat(to));
+			// InputFormat();
+		}
+
+		$inputFrom.on("change input ", function () {
+			var val = +($(this).prop("value").replace(/\s/g, ''));
+			// validate
+			if (val < min) {
+				val = min;
+			} else if (val > to) {
+				val = to;
+			}
+
+			instance.update({
+				from: val
+			});
+			$(this).prop("value", currencyFormat(val));
+			console.log(val)
+		});
+
+		$inputTo.on("change input ", function () {
+			var val = +($(this).prop("value").replace(/\s/g, ''));
+
+			// validate
+			if (val < from) {
+				val = from;
+			} else if (val > max) {
+				val = max;
+			}
+
+			instance.update({
+				to: val
+			});
+			$(this).prop("value", currencyFormat(val));
+		});
+
+	});
+
 
 	//sDigits
 	let digitsSlider = new Swiper('.digits-slider-js', {

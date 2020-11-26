@@ -1,0 +1,31 @@
+mixin sVillage(data)
+	// start sVillage
+	+b.SECTION.sVillage.section#sVillage&attributes(attributes)
+		.container
+			block
+			+b.section-title
+				h1 Коттеджный поселок Реннессанс парк
+				p Новорижское шоссе, 19 км
+		+e.baner
+			+e.baner-img
+				img(loading="lazy" src="img/@2x/village-baner.jpg" alt="")
+			+e.det-cont.container
+				+e.det-btn(href='#') Подробнее о поселке
+		.container
+			+e.filter
+				+e.filter-title Показать:
+				ul
+					li: a(href="#") Все
+					li: a(href="#") Дома
+					li: a(href="#") Таунхаусы
+					li: a(href="#") Участки
+			+b.sCatalog
+				+e.row.row
+					+catalogItem(1, 1, 'отличная цена', 'Дом в Успенка-21', '27 км, ID 744', '$ 1 060 000')
+					+catalogItem(2, 0, 0, 'Усадьба в поселке Каком-то на две строки', '27 км, ID 744', '$ 3 800 500')
+					+catalogItem(3, 0, 'отличная цена', 'Особняк с названием', '31 км, ID 1246', '$ 1 055 000', '300 м', '14 соток', '8 спален')
+					+catalogItem(4, 0, 0, 'Усадьба в поселке с очень длинным заголовком и троеточием на конце', '27 км, ID 744', '$ 3 800 500')
+					+catalogItem(5, 1, 'большой бассейн', 'Особняк с названием', '15 км, ID 58', '$ 6 780 000')
+					+catalogItem(1, 0, 0, 'Дом в Успенка-21', '27 км, ID 744', '$ 3 490 000', '290 м', '11 соток', '8 спален')
+			+pugin()
+	// end sVillage

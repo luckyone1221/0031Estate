@@ -1,0 +1,46 @@
+// start .sGrayDescr
+.sGrayDescr {
+	background-color: rgba($body-color, .05);
+
+	--sTPB: #{rem(0)};
+
+	--sPT: #{rem(33)};
+	--sPB: #{rem(34)};
+	@include media-breakpoint-up(md){
+		--sPT: #{rem(43px)};
+		--sPB: #{rem(30)};
+	}
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(76)};
+		--sPB: #{rem(38)};
+		margin-bottom: 80px;//??
+	}
+
+	.section-title{
+		@include media-breakpoint-up(xl){
+			max-width: 1070px;
+		}
+
+		h2{
+			font-weight: 500;
+			margin-bottom: 22px;
+			@include media-breakpoint-up(xl){
+				margin-bottom: 24px;
+			}
+		}
+		&__btn{
+			@extend .btn-dark-empty;
+			margin-bottom: 22px;
+			@include media-breakpoint-up(xl){
+				margin-bottom: 31px;
+			}
+		}
+		p{
+			line-height: (35/16);
+			margin-bottom: 20px;
+			color: rgba($body-color, .8);
+		}
+
+
+	}
+} // end.sGrayDescr

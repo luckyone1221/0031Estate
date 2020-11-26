@@ -399,29 +399,7 @@
       margin-bottom: 0;
     }
   }
-  &__read-more{
-    display: none;
-    &.active{
-      display: block;
-    }
-
-    @include media-breakpoint-up(md){
-      display: block!important;
-    }
-  }
-
-  &__read-more-btn{
-    display: flex;
-    align-items: center;
-    span{
-      margin-right: 10px;
-      line-height: 40px;
-    }
-    img{
-      width: 10px;
-      height: 10px;
-    }
-  }
+  //read more at bot
 
   //baner
   &__baner{
@@ -526,3 +504,27 @@
   &__{}
   &__{}
 } // end.sProdCard
+
+.read-more{
+  display: none;
+  &.active{
+    display: block;
+  }
+
+  @include media-breakpoint-up(md){
+    display: block!important;
+  }
+}
+
+.read-more-btn{
+  display: flex;
+  align-items: center;
+  span{
+    margin-right: 10px;
+    line-height: 40px;
+  }
+  img{
+    width: 10px;
+    height: 10px;
+  }
+}

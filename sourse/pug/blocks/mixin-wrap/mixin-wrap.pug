@@ -16,6 +16,25 @@ mixin arrow()
 		+icon('chevron-right')
 //- /arrow for swiper-slider
 
+mixin range(c1, c2, Symb=false, fromTxt='От', toTxt='До', title='Расстояние от МКАД :')
+	+b.range-wrap.price_slider_amount&attributes(attributes)
+		+e.head
+			+e.rw-title=title
+			+e.row
+				+e.col
+					+e.inp-txt=fromTxt
+					.form-group(data-unit='(км)')
+						+b.INPUT.input_from.form-control(type="text")
+						if Symb
+							.money-symb=Symb
+				+e.col
+					+e.inp-txt=toTxt
+					.form-group(data-unit='(км)')
+						+b.INPUT.input_to.form-control(type="text")
+						if Symb
+							.money-symb=Symb
+		input.range-slider.slider-js(type='text'  data-min=c1  data-max=c2)
+
 mixin ie11()
 	//- modernizer and for ie11
 	 

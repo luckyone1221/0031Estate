@@ -34,3 +34,147 @@
 	}
 }
 
+
+//range
+.range-wrap{
+	&__head{
+		@include media-breakpoint-up(md){
+			display: flex;
+			align-items: center;
+		}
+
+		margin-bottom: -9px;
+	}
+	&__rw-title{
+		font-weight: 500;
+
+		margin-bottom: 16px;
+		@include media-breakpoint-up(md){
+			margin-right: 28px;
+			margin-bottom: 0;
+		}
+	}
+	&__row{
+		display: flex;
+		align-items: center;
+	}
+	&__col{
+		display: flex;
+		align-items: center;
+		&:first-child{
+			margin-right: 15px;
+		}
+	}
+	&__inp-txt{
+		margin-right: 12px;
+	}
+	.form-group{
+		position: relative;
+
+		input{
+			position: relative;
+			z-index: 1;
+			width: 81px;
+			padding: 7px 33px 7px 15px;
+			background-color: transparent;
+		}
+
+		&:after{
+			content: attr(data-unit);
+			position: absolute;
+			z-index: 0;
+			right: 0;
+			top: 0;
+			//background-color: red;
+			height: 100%;
+			width: 33px;
+			color: rgba($body-color, .5);
+			font-size: $small;
+
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+		}
+
+	}
+
+	&.with-symbol{
+		input{
+			padding: 10px 30px 10px 20px;
+		}
+	}
+
+	.money-symb{
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding: 0 10px;
+	}
+	//
+	.irs-handle{
+		width: 18px;
+		height: 18px;
+		top: 28px;
+
+		cursor: pointer;
+		box-shadow: none;
+		border: none;
+		border-radius: 0;
+		transition: background-color .3s ease-in-out;
+		&:before{
+			content: '';
+			width: calc(100% - 10px);
+			height: calc(100% - 10px);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			background-color: $white;
+		}
+
+		background-color: $dark;
+		&:hover{
+			background-color: $black;
+		}
+		&:focus{
+			background-color: $black;
+		}
+	}
+	//
+	.irs-line{
+		overflow: visible;
+		height: 1px;
+		top: 37px;
+		color: rgba($body-color, 0.25);
+
+		background-color: currentColor;
+		&:before,
+		&:after{
+			content: '';
+			width: 3px;
+			height: 3px;
+			border-radius: 50%;
+			background-color: currentColor;
+			position: absolute;
+			top: -1px;
+			z-index: 2;
+			overflow: visible;
+		}
+
+		&:before{
+			left: 100%;
+		}
+		&:after{
+			right: 100%;
+		}
+	}
+	.irs-bar{
+		background-color: $dark;
+		height: 2px;
+		top: 36px;
+	}
+
+}

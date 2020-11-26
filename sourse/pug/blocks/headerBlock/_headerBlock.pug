@@ -36,3 +36,10 @@ mixin customSlect(selectName, optionsArr=['Элемент списка1', 'Эл�
 			option(value="" label='#')
 			- for (let item of optionsArr)
 				option(value=item)=item
+
+mixin customSlectWhite(selectName, optionsArr=['Элемент списка1', 'Элемент списка2', 'Элемент списка3'], placeholder='', keyClass='custom-select-js')
+	+b.custom-select--white
+		select(name=selectName data-placeholder=placeholder class=keyClass)
+			option(value="" label='#')
+			- for (let item of optionsArr)
+				option(value=item)=item

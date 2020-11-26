@@ -1,0 +1,51 @@
+mixin sSettlements(data)
+	// start sSettlements
+	+b.SECTION.sSettlements.section#sSettlements&attributes(attributes)
+		.container
+			block
+			+b.section-title
+				h2 Элитные поселки в Подмосковье
+			+e.head-row.row
+				+e.search-col.col-12.col-xl-5.col-xxl-6
+					+input('Поиск по названию', 'text', undefined, 'search')
+					+e.input-wrap
+						+customSlectWhite('', undefined, 'Направление', 'custom-white-select-js')
+				+e.filter-col.col-12.col-xl-7.col-xxl-6
+					+range('1', '300')
+					+e.find-btn-cont
+						+e.find-btn(href="#") Найти
+			+e.row.row
+				+setelmentItem(1, 'Довиль', 'Минское шоссе, 11 км')
+				+setelmentItem(2, 'Поселок какой-то', 'Другое шоссе, 16 км')
+				+setelmentItem(3, 'Название поселка длинное в две строки', 'Минское шоссе, 11 км')
+				+setelmentItem(2, 'Поселок какой-то', 'Другое шоссе, 16 км')
+				+setelmentItem(3, 'Название поселка', 'Минское шоссе, 11 км')
+				+setelmentItem(1, 'Довиль', 'Минское шоссе, 11 км')
+				+setelmentItem(3, 'Название поселка длинное в две строки', 'Минское шоссе, 11 км')
+				+setelmentItem(1, 'Довиль', 'Минское шоссе, 11 км')
+				+setelmentItem(2, 'Поселок какой-то', 'Другое шоссе, 16 км')
+				+setelmentItem(1, 'Довиль', 'Минское шоссе, 11 км')(class='d-lg-none')
+			+pugin()
+	// end sSettlements
+
+mixin setelmentItem(imgNum, name, location, houses='21', plots='2', tanHouses='4')
+	+e.col.col-12.col-sm-6.col-lg-4&attributes(attributes)
+		+e.item
+			+e.img(href="#")
+				img(loading="lazy" src=`img/@2x/settelment-item-${imgNum}.jpg` alt="")
+			+e.txt-bl
+				+e.name(href="#")=name
+				+e.location=location
+				+e.squares
+					+e.squares-item
+						+e.count=houses
+						+e.si-name Дома
+					+e.squares-item
+						+e.count=plots
+						+e.si-name Участки
+					+e.squares-item
+						+e.count=tanHouses
+						+e.si-name Таунхауса
+				+e.look-link(href="#")
+					span Смотреть объекты
+					+icon('chveron-right')

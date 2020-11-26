@@ -200,6 +200,28 @@
 	.select2-selection__placeholder{
 		color: $white!important;
 	}
+
+
+	//white
+	&--white{
+		.select2.select2-container.select2-container--default{
+			background: rgba(255, 255, 255, 1)!important;
+			border: 1px solid rgba($body-color, .25)!important;
+			backdrop-filter: unset!important;
+		}
+		.select2-selection__rendered{
+			color: $body-color!important;
+		}
+		//placeholder
+		.select2-selection__placeholder{
+			color: $body-color!important;
+		}
+		.select2-selection__arrow {
+			background-image: url(../img/svg/chevron-down-black.svg);
+		}
+
+	}
+	//
 }
 
 //dd
@@ -215,6 +237,32 @@
 		border: 1px solid rgba(255, 255, 255, 0.25)!important;
 		border-radius: 0!important;
 		background-color: transparent!important;
+
+		&.white-select{
+			border: 1px solid $input-border-color!important;
+			background-color: $white!important;
+
+			.select2-results{
+				&__option{
+					color: $body-color!important;
+					border-bottom: 1px solid $input-border-color !important;
+					background: $white!important;
+					&:last-child{
+						border-bottom: none !important;
+					}
+
+					&--highlighted{
+						background: rgba($body-color, 0.03)!important;
+					}
+
+					&[aria-selected="true"]{
+						background: rgba($body-color, 0.10)!important;
+					}
+				}
+			}
+		}
+
+
 	}
 
 	.select2-results{
@@ -244,10 +292,10 @@
 				background: rgba(24, 23, 23, 0.75)!important;
 			}
 		}
-
-
-
 	}
+
+
+
 }
 
 // end.headerBlock
