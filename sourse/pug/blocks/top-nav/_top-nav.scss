@@ -125,7 +125,9 @@
 			&:hover{
 				.submenu{
 					@include media-breakpoint-up(md){
-						transform: scaleY(1);
+						opacity: 1;
+						visibility: visible;
+						z-index: 900;
 					}
 				}
 			}
@@ -323,8 +325,11 @@
 	@include media-breakpoint-up(md){
 		display: block!important;
 		@include mt();
-		transform: scaleY(0);
-		transform-origin: top;
+		opacity: 0;
+		visibility: hidden;
+		z-index: -1;
+		//transform: scale(0);
+		transform-origin: 0 0;
 	}
 
 

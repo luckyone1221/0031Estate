@@ -7,7 +7,8 @@ mixin sVillage(data)
 				h1 Коттеджный поселок Реннессанс парк
 				p Новорижское шоссе, 19 км
 		+e.baner
-			+e.baner-img
+			+pic('village-baner.jpg')(class="sVillage__baner-img")
+			//-+e.baner-img
 				img(loading="lazy" src="img/@2x/village-baner.jpg" alt="")
 			+e.det-cont.container
 				+e.det-btn(href='#') Подробнее о поселке

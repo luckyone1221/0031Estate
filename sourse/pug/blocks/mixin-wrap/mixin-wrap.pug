@@ -23,13 +23,13 @@ mixin range(c1, c2, Symb=false, fromTxt='От', toTxt='До', title='Расст�
 			+e.row
 				+e.col
 					+e.inp-txt=fromTxt
-					.form-group(data-unit='(км)')
+					.form-group(data-unit='км')
 						+b.INPUT.input_from.form-control(type="text")
 						if Symb
 							.money-symb=Symb
 				+e.col
 					+e.inp-txt=toTxt
-					.form-group(data-unit='(км)')
+					.form-group(data-unit='км')
 						+b.INPUT.input_to.form-control(type="text")
 						if Symb
 							.money-symb=Symb

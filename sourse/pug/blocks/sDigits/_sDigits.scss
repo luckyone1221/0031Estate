@@ -82,13 +82,17 @@
 			padding-top: 3px;
 			@include media-breakpoint-up(md){
 				padding-top: 19px;
-				width: calc((100% / 3) - (19px * 2 / 3));
+				width: calc((100% / 3) - (19px * 2 / 3))!important;
 				height: 171px;
+				transform: none!important;
+				opacity: 1!important;
 			}
 			@include media-breakpoint-up(xl){
 				padding-top: 24px;
 				height: 200px;
-				width: calc((100% / 3) - (30px * 2 / 3));
+				width: calc((100% / 3) - (30px * 2 / 3))!important;
+				transform: none!important;
+				opacity: 1!important;
 			}
 
 			background: rgba(0, 0, 0, 0.2);

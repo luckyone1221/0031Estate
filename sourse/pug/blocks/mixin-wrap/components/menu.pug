@@ -25,6 +25,7 @@ mixin subMnu()
 mixin subMnuItem(imgNum, txt)
 	+e.col.col-12.col-sm-6.col-md-3
 		+e.item(href="#")
-			+e.img
+			+pic(`submenu-${imgNum}.jpg`)(class="submenu__img")
+			//-+e.img
 				img(loading="lazy" src=`img/@2x/submenu-${imgNum}.jpg` alt="")
 			+e.txt=txt

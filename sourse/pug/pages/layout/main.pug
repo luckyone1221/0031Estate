@@ -42,10 +42,9 @@ html(lang="ru")
 		meta(name='theme-color', content='#3361d8')
 		+allcss()
 	block variables
-	body(class= mainPage) 
+	body.loaded_hiding(class= mainPage)
 		block pagecontent
 			h3 content
 		+modal()
 		+allcjs()
-		
 		

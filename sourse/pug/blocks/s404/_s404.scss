@@ -7,6 +7,11 @@
 		--sPT: #{rem(101px)};
 		--sPB: #{rem(100)};
 	}
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 
 	.section-title{
 		max-width: 100%;

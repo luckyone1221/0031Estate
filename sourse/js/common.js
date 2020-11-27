@@ -321,6 +321,19 @@ function eventHandler() {
 		document.body.classList.toggle("fixed");
 		document.querySelector('html').classList.toggle("fixed");
 	});
+	function closeMobMenu(){
+		$('.burger-js').removeClass('active');
+		$('.navMenu').removeClass('active');
+		document.body.classList.remove("fixed");
+		document.querySelector('html').classList.remove("fixed");
+	}
+	window.addEventListener('resize', function (){
+		if (window.matchMedia("(min-width: 768px)").matches && $('.navMenu').hasClass('active')){
+			console.log('closed');
+			closeMobMenu();
+		}
+	}, {passive: true});
+
 
 	//submenu
 	$('.has-sub-js').click(function (){
@@ -348,6 +361,7 @@ function eventHandler() {
 
 	//headerBlock
 	let headerSlider = new Swiper('.header-slider-js', {
+		loop: true,
 		slidesPerView: 1,
 		//autoplay: 5000,
 		spaceBetween: 0,
@@ -388,8 +402,9 @@ function eventHandler() {
 			type: "double",
 			grid: false,
 			grid_snap: false,
-			hide_min_max: true,
+			hide_min_max: false,
 			hide_from_to: true,
+			//here
 			onStart: updateInputs,
 			onChange: updateInputs,
 			onFinish: updateInputs
@@ -443,6 +458,8 @@ function eventHandler() {
 	//sDigits
 	let digitsSlider = new Swiper('.digits-slider-js', {
 		slidesPerView: 'auto',
+		effect: 'fade',
+
 		breakpoints: {
 			0 : {
 				spaceBetween: 19,
@@ -451,6 +468,10 @@ function eventHandler() {
 				spaceBetween: 30,
 			},
 		},
+		//
+		// fadeEffect: {
+		// 	crossFade: true
+		// },
 		//
 		lazy: {
 			loadPrevNext: true,
@@ -481,6 +502,7 @@ function eventHandler() {
 	//sProdCard
 	let prodCardSlider = new Swiper('.prod-card-slider-js', {
 		slidesPerView: 'auto',
+		loop: true,
 		spaceBetween: 0,
 		//
 		lazy: {
@@ -490,6 +512,11 @@ function eventHandler() {
 			el: '.prod-card-pugin--js',
 			type: 'bullets',
 			clickable: true,
+		},
+		//
+		navigation: {
+			nextEl: '.prod-card-next--js',
+			prevEl: '.prod-card-prev--js',
 		},
 	});
 

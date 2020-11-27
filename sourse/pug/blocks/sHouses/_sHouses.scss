@@ -184,23 +184,31 @@
 		}
 
 		a{
-			@extend .btn-dark-empty;
 			width: 56px;
 			height: 56px;
-			padding: 0!important;
+			margin-right: 1px;
+			&:last-child{
+				margin-right: 0;
+			}
 
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			text-align: center;
 
-			&.active{
+
+			border: 1px solid rgba(40, 36, 36, 0.2);
+			color: $body-color!important;
+			&:hover{
+				border: 1px solid rgba(40, 36, 36, 0.8);
+				color: $body-color!important;
+			}
+			&.active, &:active{
+				border: 1px solid $body-color;
+				background: $body-color;
 				color: $white!important;
 			}
-			margin-right: 1px;
-			&:last-child{
-				margin-right: 0;
-			}
+
 		}
 	}
 

@@ -28,7 +28,11 @@ mixin headerBlock()
 
 mixin heaederBlSlide(imgNum)
 	.swiper-slide
-		img.swiper-lazy(src='#' data-src=`img/@2x/header-side-${imgNum}.jpg` alt="")
+		picture.headerBlock__slide-img
+			source.swiper-lazy(type='image/webp' srcset=`img/@2x/header-side-${imgNum}.jpg` media='(min-width:576px)')
+			source.swiper-lazy(type='image/webp' srcset=`img/@1x/header-side-${imgNum}.jpg`)
+			source.swiper-lazy(type='image/jpg' srcset=`img/@1x/header-side-${imgNum}.jpg` media='(max-width:576px)')
+			img.swiper-lazy(src='#' data-src=`img/@2x/header-side-${imgNum}.jpg` alt="")
 
 mixin customSlect(selectName, optionsArr=['Элемент списка1', 'Элемент списка2', 'Элемент списка3'], placeholder='', keyClass='custom-select-js')
 	+b.custom-select

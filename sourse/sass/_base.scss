@@ -429,6 +429,7 @@ a:not(.btn){
 .btn-dark-empty{
 	@extend .btn;
 	@extend .btn-dark;
+	box-shadow: none!important;
 
 	border: 1px solid $dark;
 	color: $dark;
@@ -437,6 +438,11 @@ a:not(.btn){
 		border: 1px solid $dark;
 		color: $white!important;
 		background-color: $dark;
+	}
+	&:active, &:focus{
+		border: 1px solid $dark!important;
+		color: $dark!important;
+		background-color: transparent!important;
 	}
 
 }
@@ -713,6 +719,7 @@ h2, .h2{
 
 			&.current{
 				color: $primary;
+				font-weight: 500;
 				&:after{
 					opacity: 1;
 				}

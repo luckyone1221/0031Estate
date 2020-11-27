@@ -190,15 +190,30 @@
       padding-top: 33.9%;
     }
 
-    img{
+    picture{
       position: absolute;
       z-index: 1;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
+    //old
+    //img{
+    //  position: absolute;
+    //  z-index: 1;
+    //  top: 0;
+    //  left: 0;
+    //  width: 100%;
+    //  height: 100%;
+    //  object-fit: cover;
+    //}
 
     &:before,
     &:after{

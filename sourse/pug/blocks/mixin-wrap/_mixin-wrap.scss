@@ -176,5 +176,32 @@
 		height: 2px;
 		top: 36px;
 	}
+	//min, max
+	.irs-min,
+	.irs-max{
+		top: 50px;
+		font-size: 13px;
+		line-height: (24/13);
+		background: transparent;
+
+		color: rgba($body-color, .65);
+
+		&:after{
+			content: 'км';
+			display: inline;
+			vertical-align: baseline;
+			margin-left: 3px;
+			//font-size: 12px;
+		}
+
+
+	}
+
+	.irs-min{
+		left: -3px;
+	}
+	.irs-max{
+		right: -3px;
+	}
 
 }
