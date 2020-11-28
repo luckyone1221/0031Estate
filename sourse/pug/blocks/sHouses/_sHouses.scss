@@ -131,8 +131,8 @@
 		display: inline-flex;
 		align-items: center;
 		.icon{
-			//position: relative;
-			//top: -1.5px;
+			position: relative;
+			top: -2.5px;
 			@include mt();
 			font-size: 22px;
 			margin-right: 10px;
@@ -142,8 +142,15 @@
 		}
 		&:hover{
 			.icon{
-				color: $primary;
+				//color: $primary;
 				stroke: $primary;
+			}
+		}
+		&:active{
+			color: $body-color!important;
+			.icon{
+				//color: $primary;
+				stroke: $body-color;
 			}
 		}
 		span{
@@ -170,7 +177,7 @@
 			}
 		}
 	}
-	&__sort-links{
+	&__sort-items{
 		display: flex;
 		align-items: stretch;
 
@@ -183,19 +190,59 @@
 			top: 0;
 		}
 
-		a{
+		//a{
+		//	width: 56px;
+		//	height: 56px;
+		//	margin-right: 1px;
+		//	&:last-child{
+		//		margin-right: 0;
+		//	}
+		//
+		//	display: flex;
+		//	align-items: center;
+		//	justify-content: center;
+		//	text-align: center;
+		//
+		//
+		//	border: 1px solid rgba(40, 36, 36, 0.2);
+		//	color: $body-color!important;
+		//	&:hover{
+		//		border: 1px solid rgba(40, 36, 36, 0.8);
+		//		color: $body-color!important;
+		//	}
+		//	&.active, &:active{
+		//		border: 1px solid $body-color;
+		//		background: $body-color;
+		//		color: $white!important;
+		//	}
+		//
+		//}
+	}
+	&__sort-item{
+		margin-right: 1px;
+		&:last-child{
+			margin-right: 0;
+		}
+
+		input{
+			display: none;
+		}
+		input:checked + .sort-square{
+			border: 1px solid $body-color;
+			background: $body-color;
+			color: $white!important;
+		}
+
+		.sort-square{
+			cursor: pointer;
+			@include mt();
 			width: 56px;
 			height: 56px;
-			margin-right: 1px;
-			&:last-child{
-				margin-right: 0;
-			}
 
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			text-align: center;
-
 
 			border: 1px solid rgba(40, 36, 36, 0.2);
 			color: $body-color!important;
@@ -203,7 +250,7 @@
 				border: 1px solid rgba(40, 36, 36, 0.8);
 				color: $body-color!important;
 			}
-			&.active, &:active{
+			&:active{
 				border: 1px solid $body-color;
 				background: $body-color;
 				color: $white!important;
@@ -211,7 +258,6 @@
 
 		}
 	}
-
 
 	/*catalog*/
 	/*catalog*/

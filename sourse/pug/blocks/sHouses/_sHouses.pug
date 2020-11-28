@@ -20,9 +20,13 @@ mixin sHouses(data)
 							+icon('star')
 							span Сохранить настройки поиска
 				+e.sort-col
-					+e.sort-links
-						a.active(href='#') ₽
-						a(href='#') $
+					+e.sort-items
+						+e.LABEL.sort-item
+							input(type="radio" name="currency" value="rub" checked)
+							.sort-square ₽
+						+e.LABEL.sort-item
+							input(type="radio" name="currency" value="dol" checked)
+							.sort-square $
 					+customSlectWhiteNoPH('selectName', undefined, 'custom-white-select-js')
 			+b.filters-bl--js
 				+e.container.container

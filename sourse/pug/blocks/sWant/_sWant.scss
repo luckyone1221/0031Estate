@@ -89,14 +89,14 @@
 			width: 100%;
 		}
 		&__btn{
-			@extend .btn;
-			@extend .btn-dark;
+			@extend .btn-dark-frame;
 		}
 		//
 		&__btn-more{
-			@extend .btn;
-			@extend .btn-dark;
-			color: $white!important;
+			//@extend .btn;
+			//@extend .btn-dark;
+			//color: $white!important;
+			@extend .btn-dark-frame;
 		}
 		&__{}
 		&__{}

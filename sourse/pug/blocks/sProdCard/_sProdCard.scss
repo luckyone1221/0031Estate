@@ -98,8 +98,14 @@
 
     &:hover{
       .icon{
-        color: $primary;
+        //color: $primary;
         stroke: $primary;
+      }
+    }
+    &:active{
+      color: $body-color!important;
+      .icon{
+        stroke: $body-color;
       }
     }
 
@@ -232,7 +238,6 @@
       transform: rotate(180deg);
       bottom: 0;
     }
-
   }
 
   //char-line
@@ -501,6 +506,7 @@
 
     @include media-breakpoint-up(md){
       //.btn-blured-frame
+      box-shadow: none!important;
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid $white;
       backdrop-filter: blur(25px);
@@ -510,6 +516,12 @@
         text-shadow: 0 0 .8px rgba($body-color, .8);
         background: $white;
         border: 1px solid $white;
+      }
+      &:active{
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(25px);
+        color: $white;
       }
 
     }

@@ -426,6 +426,25 @@ a:not(.btn){
 	}
 }
 
+.btn-dark-frame{
+	@extend .btn;
+	@extend .btn-dark;
+	box-shadow: none!important;
+
+	color: $white!important;
+	background: $body-color!important;
+	border: 1px solid $body-color!important;
+	&:hover{
+		color: $white!important;
+		background: $body-color!important;
+		border: 1px solid $body-color!important;
+	}
+	&:active{
+		color: $body-color!important;
+		background: transparent!important;
+		border: 1px solid $body-color!important;
+	}
+}
 .btn-dark-empty{
 	@extend .btn;
 	@extend .btn-dark;
@@ -450,6 +469,7 @@ a:not(.btn){
 .btn-blured-frame{
 	@extend .btn;
 	@extend .btn-white;
+	box-shadow: none!important;
 
 	background: rgba(255, 255, 255, 0.07);
 	border: 1px solid rgba(255, 255, 255, 0.35);
@@ -462,6 +482,13 @@ a:not(.btn){
 		background: $white;
 		border: 1px solid $white;
 	}
+	&:active{
+		background: rgba(255, 255, 255, 0.07);
+		border: 1px solid rgba(255, 255, 255, 0.35);
+		backdrop-filter: blur(25px);
+		color: $white;
+	}
+
 }
 
 //cont
@@ -530,6 +557,9 @@ h2, .h2{
 		opacity: .35;
 		@include media-breakpoint-up(md){
 			opacity: .7;
+		}
+		&:hover{
+			opacity: 1;
 		}
 
 		position: relative;
@@ -659,6 +689,9 @@ h2, .h2{
 				&:hover{
 					border: 1px solid rgba($body-color, .1);
 				}
+				&:active{
+					border: 1px solid rgba($body-color, .8);
+				}
 
 				width: 34px;
 				height: 34px;
@@ -740,4 +773,9 @@ h2, .h2{
 
 	}
 
+}
+
+//inp hover
+input:hover{
+	border-color: rgba($body-color, .8);
 }

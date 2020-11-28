@@ -163,11 +163,16 @@
 	}
 
 	.select2.select2-container.select2-container--default{
+		@include mt();
 		width: 100%!important;
 		height: 56px!important;
 
 		background: rgba(255, 255, 255, 0.07)!important;
 		border: 1px solid rgba(255, 255, 255, 0.25)!important;
+		&:hover{
+			border: 1px solid rgba(255, 255, 255, 0.6)!important;
+		}
+
 		backdrop-filter: blur(35px)!important;
 	}
 	.select2.select2-container.select2-container--default.select2-container--open{
@@ -222,6 +227,10 @@
 			background: rgba(255, 255, 255, 1)!important;
 			border: 1px solid rgba($body-color, .25)!important;
 			backdrop-filter: unset!important;
+
+			&:hover{
+				border: 1px solid rgba($body-color, 0.8)!important;
+			}
 		}
 		.select2-selection__rendered{
 			color: $body-color!important;
@@ -249,6 +258,8 @@
 
 	.select2-dropdown.select2-dropdown--below{
 		border: 1px solid rgba(255, 255, 255, 0.25)!important;
+		border-top: none!important;
+
 		border-radius: 0!important;
 		background-color: transparent!important;
 

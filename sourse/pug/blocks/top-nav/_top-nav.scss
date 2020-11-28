@@ -136,6 +136,12 @@
 			@include media-breakpoint-down(md){
 				padding-left: 16px;
 				padding-right: 16px;
+
+				opacity: .8;
+				&:active, &.active{
+					opacity: 1;
+				}
+
 			}
 
 			text-align: left;
@@ -149,8 +155,13 @@
 				display: block;
 				height: 100%;
 				line-height: 55px;
-				//padding-left: 0!important;
-				//padding-right: 0!important;
+
+				&:hover{
+					color: $primary!important;
+				}
+				&:active{
+					color: $body-color!important;
+				}
 			}
 			&.active{
 				@include media-breakpoint-up(md){
@@ -201,9 +212,21 @@
 				font-size: 22px;
 				margin-right: 10px;
 
-				color: transparent;
+				color: transparent!important;
 				stroke: $white;
+				opacity: .65;
 			}
+			span{
+				@include mt();
+				opacity: .8;
+			}
+
+			&:active{
+				span{
+					opacity: 1;
+				}
+			}
+
 		}
 	}
 
@@ -218,7 +241,7 @@
 			font-size: 22px;
 			margin-right: 10px;
 
-			color: transparent;
+			color: transparent!important;
 			stroke: rgba($body-color, .25);
 		}
 		&:hover{
@@ -227,6 +250,16 @@
 				stroke: $primary;
 			}
 		}
+		&:active{
+			.icon{
+				stroke: $body-color;
+			}
+			span{
+				color: $body-color;
+			}
+
+		}
+
 	}
 	&__num-link{
 		margin-right: 30px;
@@ -238,6 +271,13 @@
 		margin-right: 25px;
 		@include media-breakpoint-up(md){
 			margin-right: 0;
+		}
+
+		@include media-breakpoint-down(xl){
+			&:focus{
+				color: $white!important;
+				background: $body-color!important;
+			}
 		}
 
 		@include media-breakpoint-down(xl){
@@ -358,6 +398,10 @@
 		@include media-breakpoint-down(md){
 			color: $white!important;
 		}
+
+		&:active{
+			color: $body-color!important;
+		}
 	}
 	&__img{
 		display: block;
@@ -368,12 +412,12 @@
 		margin-bottom: 10px;
 		overflow: hidden;
 
-		&:hover{
-			filter: brightness(.95);
-			img{
-				transform: scale(1.1);
-			}
-		}
+		//&:hover{
+		//	filter: brightness(.95);
+		//	img{
+		//		transform: scale(1.1);
+		//	}
+		//}
 
 		img{
 			@include mt();
