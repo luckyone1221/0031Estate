@@ -179,7 +179,10 @@
 	//min, max
 	.irs-min,
 	.irs-max{
-		top: 50px;
+		top: 41px;
+		@include media-breakpoint-up(md){
+			top: 50px;
+		}
 		font-size: 13px;
 		line-height: (24/13);
 		background: transparent;

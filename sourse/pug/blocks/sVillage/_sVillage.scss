@@ -1,7 +1,6 @@
 // start .sVillage
 .sVillage {
 	.breadcrumb-slider-js{
-
 		margin-bottom: 16px;
 		@include media-breakpoint-up(xl){
 			margin-bottom: 13px;
@@ -12,7 +11,7 @@
 
 	--sPT: #{rem(17)};
 	--sPB: #{rem(25)};
-	--sTPB: #{rem(21)};
+	--sTPB: #{rem(18px)};
 	@include media-breakpoint-up(md){
 		--sPT: #{rem(26px)};
 		--sPB: #{rem(30)};
@@ -37,7 +36,11 @@
 		}
 		h1{
 			font-weight: bold;
-			line-height: 1;
+
+			@include media-breakpoint-down(sm){
+				display: block!important;
+				line-height: .97;
+			}
 
 			@include media-breakpoint-down(xs){
 				display: inline;
@@ -72,7 +75,7 @@
 	&__baner{
 		position: relative;
 
-		margin-bottom: 28px;
+		margin-bottom: 26px;
 		@include media-breakpoint-up(md){
 			margin-bottom: 35px;
 		}
@@ -153,7 +156,7 @@
 
 	//filter
 	&__filter{
-		margin-bottom: 32px;
+		margin-bottom: 30px;
 		@include media-breakpoint-up(md){
 			display: flex;
 			justify-content: center;
@@ -174,7 +177,7 @@
 
 			li{
 				margin-right: 5px;
-				margin-bottom: 5px;
+				margin-bottom: 6px;
 				@include media-breakpoint-up(md){
 					margin-right: 12px;
 					margin-bottom: 12px;
@@ -185,7 +188,11 @@
 			}
 			a{
 				@extend .btn-dark-empty;
-				padding: 9px 20px!important;
+
+				padding: 9px 19px!important;
+				@include media-breakpoint-up(sm){
+					padding: 9px 20px!important;
+				}
 				font-size: 13px;
 			}
 		}

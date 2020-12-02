@@ -652,7 +652,11 @@ h2, .h2{
 			 &:before{
 				 content: '';
 				 display: inline-block;
-				 margin: 0 15px;
+
+				 margin: 0 10px;
+				 @include media-breakpoint-up(md){
+					 margin: 0 15px;
+				 }
 				 width: 3px;
 				 height: 3px;
 				 border-radius: 50%;
@@ -778,4 +782,11 @@ h2, .h2{
 //inp hover
 input:hover{
 	border-color: rgba($body-color, .8);
+}
+
+//pp
+.form-control{
+	@include media-breakpoint-down(md){
+		padding: 15px 24px;
+	}
 }

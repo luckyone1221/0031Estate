@@ -68,8 +68,10 @@
 		.breadcrumb-slider-js{
 			margin-bottom: 15px;
 			@include media-breakpoint-down(sm){
-				max-width: calc(100% - 24px);
-				margin-left: auto;
+				//max-width: calc(100% - 24px);
+				//margin-left: auto;
+				padding-left: 16px;
+				padding-right: 16px;
 			}
 		}
 
