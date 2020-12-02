@@ -7,8 +7,6 @@
 		}
 	}
 
-
-
 	--sPT: #{rem(17)};
 	--sPB: #{rem(25)};
 	--sTPB: #{rem(18px)};
@@ -20,6 +18,7 @@
 	@include media-breakpoint-up(xl){
 		--sPT: #{rem(27)};
 		--sPB: #{rem(40)};
+		--sTPB: #{rem(28px)};
 	}
 	//
 

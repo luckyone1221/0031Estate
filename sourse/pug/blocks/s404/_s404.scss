@@ -5,11 +5,11 @@
 	--sPT: #{rem(51px)};
 	@include media-breakpoint-up(md){
 		--sPT: #{rem(101px)};
-		--sPB: #{rem(100)};
+		--sPB: #{rem(183px)};
 	}
 	flex-grow: 1;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 
 
@@ -20,7 +20,10 @@
 		margin-right: auto;
 
 		&__img{
-			margin-bottom: 31.5px;
+			margin-bottom: 28.5px;
+			@include media-breakpoint-up(sm){
+				margin-bottom: 31.5px;
+			}
 			img{
 				width: 100%;
 				height: auto;

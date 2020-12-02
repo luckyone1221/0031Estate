@@ -5,6 +5,9 @@ mixin s404(data)
 			+b.section-title.text-center
 				+e.img
 					img(loading="lazy" src="img/svg/img-404.svg" alt="")
-				h1 Запрашиваемая страница не существует
+				h1
+					| Запрашиваемая страница
+					br.d-md-none
+					| не существует
 				+e.btn(href='#') Перейти на главную
 	// end s404
