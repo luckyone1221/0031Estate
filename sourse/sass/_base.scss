@@ -1,12 +1,14 @@
 .pixel-perfect {
 	top: 0;
+	top: -60px;
 	display: block;
 	@include a-cent(x); 
 	pointer-events: none;
 	z-index: 1000;
+	z-index: 1111100;
 	overflow: hidden;
 	width: 100%;
-	height: 100%;
+	height: 120%;
 	background-position: center 0;
 	opacity: 0;
 	opacity: 0.7;
@@ -788,5 +790,16 @@ input:hover{
 .form-control{
 	@include media-breakpoint-down(md){
 		padding: 15px 24px;
+	}
+}
+//modal cross
+.fancybox-close-small{
+	padding: 8px!important;
+	right: 11px!important;
+	top: 10px!important;
+	@include media-breakpoint-up(xl){
+		padding: 8px!important;
+		right: 11px!important;
+		top: 10px!important;
 	}
 }

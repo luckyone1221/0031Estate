@@ -25,14 +25,24 @@
 			font-weight: 500;
 			margin-bottom: 22px;
 			@include media-breakpoint-up(xl){
-				margin-bottom: 24px;
+				margin-bottom: 21px;
+			}
+
+			font-size: 34px;
+			@include media-breakpoint-up(lg){
+				font-size: 48px;
 			}
 		}
 		&__btn{
 			@extend .btn-dark-empty;
 			margin-bottom: 22px;
 			@include media-breakpoint-up(xl){
-				margin-bottom: 31px;
+				margin-bottom: 30px;
+			}
+
+			@include media-breakpoint-down(lg){
+				padding: 16px 38px;
+				font-size: 14px;
 			}
 		}
 		p{

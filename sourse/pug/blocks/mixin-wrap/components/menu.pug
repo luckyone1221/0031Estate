@@ -18,7 +18,11 @@ mixin subMnu()
 		+e.container.container
 			+e.row.row
 				+subMnuItem(1, 'Дома на продажу')
-				+subMnuItem(2, 'Таунхаусы  на продажу')
+				+subMnuItem(2, 'Таунхаусы на продажу')
+					| Таунхаусы
+					|
+					br.d-none.d-md-block.d-lg-none
+					| на продажу
 				+subMnuItem(3, 'Участки на продажу')
 				+subMnuItem(4, 'Специальные предложения')
 
@@ -26,6 +30,8 @@ mixin subMnuItem(imgNum, txt)
 	+e.col.col-12.col-sm-6.col-md-3
 		+e.item(href="#")
 			+pic(`submenu-${imgNum}.jpg`)(class="submenu__img")
-			//-+e.img
-				img(loading="lazy" src=`img/@2x/submenu-${imgNum}.jpg` alt="")
-			+e.txt=txt
+			if block
+				+e.txt
+					block
+			else
+				+e.txt=txt
